@@ -17,10 +17,12 @@ namespace TAC_Buddy2_Proj.Models
         public double TAC_TeamLeader_ID { get; set; }
         public TAC_TeamLeader TAC_TeamLeader { get; set; }
 
+        [Display(Name = "MGRS Grid Coordinates")]
         public MilitaryGridReferenceSystem MGRS_Coords { get; set; }
 
         public double Elevation { get; set; }
 
+        [Display(Name = "Lat/Long Coordinates")]
         public Coordinate Lat_Long { get; set; }
     }
 }
