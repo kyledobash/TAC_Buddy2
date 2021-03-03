@@ -10,13 +10,13 @@ namespace TAC_Buddy2_Proj.Models
     public class EDL_Item
     {
         [Key]
-        public double EDL_ID { get; set; }
+        public int EDL_ID { get; set; }
 
         [ForeignKey("TAC_TeamLeader_ID")]
-        public double? TAC_TeamLeader_ID { get; set; }
+        public int? TAC_TeamLeader_ID { get; set; }
 
         [ForeignKey("TAC_TeamMate_ID")]
-        public double? TAC_TeamMate_ID { get; set; }
+        public int? TAC_TeamMate_ID { get; set; }
 
         [Display(Name = "Item Name/Type")]
         public string EDL_Item_Name { get; set; }

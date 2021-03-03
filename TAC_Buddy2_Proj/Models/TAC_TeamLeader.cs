@@ -11,7 +11,7 @@ namespace TAC_Buddy2_Proj.Models
     public class TAC_TeamLeader
     {
         [Key]
-        public double TAC_TeamLeader_ID { get; set; }
+        public int TAC_TeamLeader_ID { get; set; }
 
         [ForeignKey("IdentityUser")]
         public string IdentityUserId { get; set; }

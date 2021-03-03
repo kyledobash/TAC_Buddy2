@@ -11,10 +11,10 @@ namespace TAC_Buddy2_Proj.Models
     public class TAC_TeamMate
     {
         [Key]
-        public double TAC_TeamMate_ID { get; set; }
+        public int TAC_TeamMate_ID { get; set; }
 
         [ForeignKey("TAC_TeamLeader_ID")]
-        public double TAC_TeamLeader_ID { get; set; }
+        public int TAC_TeamLeader_ID { get; set; }
 
         public string Rank { get; set; }
 

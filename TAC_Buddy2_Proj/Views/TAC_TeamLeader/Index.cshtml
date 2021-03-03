@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TAC_Buddy2_Proj.Models.TAC_TeamLeader>
+﻿@model TAC_Buddy2_Proj.Models.TAC_TeamLeader
 
 @{
     ViewData["Title"] = "Index";
@@ -44,41 +44,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.IdentityUser.Id)
+                @Html.DisplayFor(model => model.IdentityUser.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Rank)
+                @Html.DisplayFor(model => model.Rank)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(model => model.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastName)
+                @Html.DisplayFor(model => model.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EDIPI_DoD_ID)
+                @Html.DisplayFor(model => model.EDIPI_DoD_ID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Billet)
+                @Html.DisplayFor(model => model.Billet)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MOS_designator)
+                @Html.DisplayFor(model => model.MOS_designator)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EDL_Last_Verified)
+                @Html.DisplayFor(model => model.EDL_Last_Verified)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ZAP_Number)
+                @Html.DisplayFor(model => model.ZAP_Number)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TAC_TeamLeader_ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TAC_TeamLeader_ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TAC_TeamLeader_ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@this.Model.TAC_TeamLeader_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@this.Model.TAC_TeamLeader_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@this.Model.TAC_TeamLeader_ID">Delete</a>
             </td>
         </tr>
-}
     </tbody>
 </table>

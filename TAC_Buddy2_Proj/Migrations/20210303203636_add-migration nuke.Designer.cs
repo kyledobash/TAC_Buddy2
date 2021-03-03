@@ -10,8 +10,8 @@ using TAC_Buddy2_Proj.Data;
 namespace TAC_Buddy2_Proj.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210303172654_nuke")]
-    partial class nuke
+    [Migration("20210303203636_add-migration nuke")]
+    partial class addmigrationnuke
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,8 +50,8 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ac7ef7bf-875d-4e88-b150-745b20dea071",
-                            ConcurrencyStamp = "988b9e8e-5807-46c6-8d2d-6ce18a3b7c2f",
+                            Id = "ab8cf581-6b80-4fec-b76b-0c6b2f111cc3",
+                            ConcurrencyStamp = "a9605bca-0cd5-40a5-a5eb-2af923d4886b",
                             Name = "TAC_TeamLeader",
                             NormalizedName = "TAC_TeamLeader"
                         });
@@ -228,8 +228,10 @@ namespace TAC_Buddy2_Proj.Migrations
 
             modelBuilder.Entity("TAC_Buddy2_Proj.Models.EDL_Item", b =>
                 {
-                    b.Property<double>("EDL_ID")
-                        .HasColumnType("float");
+                    b.Property<int>("EDL_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("EDL_Item_Name")
                         .HasColumnType("nvarchar(max)");
@@ -237,11 +239,11 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.Property<string>("EDL_Serial")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double?>("TAC_TeamLeader_ID")
-                        .HasColumnType("float");
+                    b.Property<int?>("TAC_TeamLeader_ID")
+                        .HasColumnType("int");
 
-                    b.Property<double?>("TAC_TeamMate_ID")
-                        .HasColumnType("float");
+                    b.Property<int?>("TAC_TeamMate_ID")
+                        .HasColumnType("int");
 
                     b.HasKey("EDL_ID");
 
@@ -250,52 +252,54 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasData(
                         new
                         {
-                            EDL_ID = 1.0,
+                            EDL_ID = 1,
                             EDL_Item_Name = "M4A1",
                             EDL_Serial = "189GH200",
-                            TAC_TeamLeader_ID = 1.0
+                            TAC_TeamLeader_ID = 1
                         },
                         new
                         {
-                            EDL_ID = 2.0,
+                            EDL_ID = 2,
                             EDL_Item_Name = "PVS-14",
                             EDL_Serial = "4552983",
-                            TAC_TeamLeader_ID = 1.0
+                            TAC_TeamLeader_ID = 1
                         },
                         new
                         {
-                            EDL_ID = 3.0,
+                            EDL_ID = 3,
                             EDL_Item_Name = "M27 IAR",
                             EDL_Serial = "8679YU123",
-                            TAC_TeamMate_ID = 1.0
+                            TAC_TeamMate_ID = 1
                         },
                         new
                         {
-                            EDL_ID = 4.0,
+                            EDL_ID = 4,
                             EDL_Item_Name = "PVS-14",
                             EDL_Serial = "45578982",
-                            TAC_TeamMate_ID = 1.0
+                            TAC_TeamMate_ID = 1
                         },
                         new
                         {
-                            EDL_ID = 5.0,
+                            EDL_ID = 5,
                             EDL_Item_Name = "M38 IAR",
                             EDL_Serial = "1979TG143",
-                            TAC_TeamMate_ID = 2.0
+                            TAC_TeamMate_ID = 2
                         },
                         new
                         {
-                            EDL_ID = 6.0,
+                            EDL_ID = 6,
                             EDL_Item_Name = "PVS-14",
                             EDL_Serial = "94858937",
-                            TAC_TeamMate_ID = 2.0
+                            TAC_TeamMate_ID = 2
                         });
                 });
 
             modelBuilder.Entity("TAC_Buddy2_Proj.Models.TAC_TeamLeader", b =>
                 {
-                    b.Property<double>("TAC_TeamLeader_ID")
-                        .HasColumnType("float");
+                    b.Property<int>("TAC_TeamLeader_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Billet")
                         .HasColumnType("nvarchar(max)");
@@ -333,7 +337,7 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasData(
                         new
                         {
-                            TAC_TeamLeader_ID = 1.0,
+                            TAC_TeamLeader_ID = 1,
                             Billet = "Team Leader",
                             EDIPI_DoD_ID = 1528906067.0,
                             EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -347,8 +351,10 @@ namespace TAC_Buddy2_Proj.Migrations
 
             modelBuilder.Entity("TAC_Buddy2_Proj.Models.TAC_TeamMate", b =>
                 {
-                    b.Property<double>("TAC_TeamMate_ID")
-                        .HasColumnType("float");
+                    b.Property<int>("TAC_TeamMate_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Billet")
                         .HasColumnType("nvarchar(max)");
@@ -371,8 +377,8 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.Property<string>("Rank")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("TAC_TeamLeader_ID")
-                        .HasColumnType("float");
+                    b.Property<int>("TAC_TeamLeader_ID")
+                        .HasColumnType("int");
 
                     b.Property<string>("ZAP_Number")
                         .HasColumnType("nvarchar(max)");
@@ -384,7 +390,7 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasData(
                         new
                         {
-                            TAC_TeamMate_ID = 1.0,
+                            TAC_TeamMate_ID = 1,
                             Billet = "Assistant Team Leader",
                             EDIPI_DoD_ID = 1672285964.0,
                             EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -392,12 +398,12 @@ namespace TAC_Buddy2_Proj.Migrations
                             LastName = "Hinton",
                             MOS_designator = "0341",
                             Rank = "CPL",
-                            TAC_TeamLeader_ID = 1.0,
+                            TAC_TeamLeader_ID = 1,
                             ZAP_Number = "JH85964"
                         },
                         new
                         {
-                            TAC_TeamMate_ID = 2.0,
+                            TAC_TeamMate_ID = 2,
                             Billet = "Designated Marksman",
                             EDIPI_DoD_ID = 1683040678.0,
                             EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -405,7 +411,7 @@ namespace TAC_Buddy2_Proj.Migrations
                             LastName = "Ingles",
                             MOS_designator = "0311",
                             Rank = "LCPL",
-                            TAC_TeamLeader_ID = 1.0,
+                            TAC_TeamLeader_ID = 1,
                             ZAP_Number = "JI40678"
                         });
                 });

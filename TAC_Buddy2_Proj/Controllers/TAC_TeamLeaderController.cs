@@ -24,14 +24,14 @@ namespace TAC_Buddy2_Proj.Controllers
         public IActionResult Index()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var teamLeader = _context.TAC_TeamLeaders.Where(c => c.IdentityUserId == userId).SingleOrDefault();
+            var teamLeader = _context.TAC_TeamLeaders.Where(t => t.IdentityUserId == userId).SingleOrDefault();
             if (teamLeader == null)
             {
                 return RedirectToAction(nameof(Create));
             }
             else
             {
-                return View(teamLeader);
+                return View();
             }
         }
 
@@ -66,16 +66,13 @@ namespace TAC_Buddy2_Proj.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TAC_TeamLeader_ID,IdentityUserId,Rank,FirstName,LastName,EDIPI_DoD_ID,Billet,MOS_designator,EDL_Last_Verified,ZAP_Number")] TAC_TeamLeader tAC_TeamLeader)
+        public IActionResult Create([Bind("Rank,FirstName,LastName,EDIPI_DoD_ID,Billet,MOS_designator,EDL_Last_Verified,ZAP_Number")] TAC_TeamLeader tAC_TeamLeader)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(tAC_TeamLeader);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["IdentityUserId"] = new SelectList(_context.Users, "Id", "Id", tAC_TeamLeader.IdentityUserId);
-            return View(tAC_TeamLeader);
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            tAC_TeamLeader.IdentityUserId = userId;
+            _context.Add(tAC_TeamLeader);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: TAC_TeamLeader/Edit/5

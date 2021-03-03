@@ -23,7 +23,7 @@ namespace TAC_Buddy2_Proj.ActionFilters
                 if (_claimsPrincipal.IsInRole("TAC_TeamLeader"))
                 {
                     context.Result = new RedirectToActionResult("Index",
-                    "TAC_TeamLeaders", null);
+                    "TAC_TeamLeader", null);
                 }
             }
         }

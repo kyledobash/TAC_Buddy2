@@ -14,15 +14,6 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="TAC_TeamLeader_ID" class="control-label"></label>
-                <input asp-for="TAC_TeamLeader_ID" class="form-control" />
-                <span asp-validation-for="TAC_TeamLeader_ID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdentityUserId" class="control-label"></label>
-                <select asp-for="IdentityUserId" class ="form-control" asp-items="ViewBag.IdentityUserId"></select>
-            </div>
-            <div class="form-group">
                 <label asp-for="Rank" class="control-label"></label>
                 <input asp-for="Rank" class="form-control" />
                 <span asp-validation-for="Rank" class="text-danger"></span>

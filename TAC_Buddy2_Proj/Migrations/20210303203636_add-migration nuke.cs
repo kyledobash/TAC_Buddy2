@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TAC_Buddy2_Proj.Migrations
 {
-    public partial class nuke : Migration
+    public partial class addmigrationnuke : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,9 +50,10 @@ namespace TAC_Buddy2_Proj.Migrations
                 name: "EDL_Items",
                 columns: table => new
                 {
-                    EDL_ID = table.Column<double>(nullable: false),
-                    TAC_TeamLeader_ID = table.Column<double>(nullable: true),
-                    TAC_TeamMate_ID = table.Column<double>(nullable: true),
+                    EDL_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TAC_TeamLeader_ID = table.Column<int>(nullable: true),
+                    TAC_TeamMate_ID = table.Column<int>(nullable: true),
                     EDL_Item_Name = table.Column<string>(nullable: true),
                     EDL_Serial = table.Column<string>(nullable: true)
                 },
@@ -65,8 +66,9 @@ namespace TAC_Buddy2_Proj.Migrations
                 name: "TAC_TeamMates",
                 columns: table => new
                 {
-                    TAC_TeamMate_ID = table.Column<double>(nullable: false),
-                    TAC_TeamLeader_ID = table.Column<double>(nullable: false),
+                    TAC_TeamMate_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TAC_TeamLeader_ID = table.Column<int>(nullable: false),
                     Rank = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
@@ -191,7 +193,8 @@ namespace TAC_Buddy2_Proj.Migrations
                 name: "TAC_TeamLeaders",
                 columns: table => new
                 {
-                    TAC_TeamLeader_ID = table.Column<double>(nullable: false),
+                    TAC_TeamLeader_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     IdentityUserId = table.Column<string>(nullable: true),
                     Rank = table.Column<string>(nullable: true),
                     FirstName = table.Column<string>(nullable: true),
@@ -216,33 +219,33 @@ namespace TAC_Buddy2_Proj.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "ac7ef7bf-875d-4e88-b150-745b20dea071", "988b9e8e-5807-46c6-8d2d-6ce18a3b7c2f", "TAC_TeamLeader", "TAC_TeamLeader" });
+                values: new object[] { "ab8cf581-6b80-4fec-b76b-0c6b2f111cc3", "a9605bca-0cd5-40a5-a5eb-2af923d4886b", "TAC_TeamLeader", "TAC_TeamLeader" });
 
             migrationBuilder.InsertData(
                 table: "EDL_Items",
                 columns: new[] { "EDL_ID", "EDL_Item_Name", "EDL_Serial", "TAC_TeamLeader_ID", "TAC_TeamMate_ID" },
                 values: new object[,]
                 {
-                    { 1.0, "M4A1", "189GH200", 1.0, null },
-                    { 2.0, "PVS-14", "4552983", 1.0, null },
-                    { 3.0, "M27 IAR", "8679YU123", null, 1.0 },
-                    { 4.0, "PVS-14", "45578982", null, 1.0 },
-                    { 5.0, "M38 IAR", "1979TG143", null, 2.0 },
-                    { 6.0, "PVS-14", "94858937", null, 2.0 }
+                    { 1, "M4A1", "189GH200", 1, null },
+                    { 2, "PVS-14", "4552983", 1, null },
+                    { 3, "M27 IAR", "8679YU123", null, 1 },
+                    { 4, "PVS-14", "45578982", null, 1 },
+                    { 5, "M38 IAR", "1979TG143", null, 2 },
+                    { 6, "PVS-14", "94858937", null, 2 }
                 });
 
             migrationBuilder.InsertData(
                 table: "TAC_TeamLeaders",
                 columns: new[] { "TAC_TeamLeader_ID", "Billet", "EDIPI_DoD_ID", "EDL_Last_Verified", "FirstName", "IdentityUserId", "LastName", "MOS_designator", "Rank", "ZAP_Number" },
-                values: new object[] { 1.0, "Team Leader", 1528906067.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kyle", null, "Dobash", "0341", "CPL", "KD06067" });
+                values: new object[] { 1, "Team Leader", 1528906067.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kyle", null, "Dobash", "0341", "CPL", "KD06067" });
 
             migrationBuilder.InsertData(
                 table: "TAC_TeamMates",
                 columns: new[] { "TAC_TeamMate_ID", "Billet", "EDIPI_DoD_ID", "EDL_Last_Verified", "FirstName", "LastName", "MOS_designator", "Rank", "TAC_TeamLeader_ID", "ZAP_Number" },
                 values: new object[,]
                 {
-                    { 1.0, "Assistant Team Leader", 1672285964.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jake", "Hinton", "0341", "CPL", 1.0, "JH85964" },
-                    { 2.0, "Designated Marksman", 1683040678.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jack", "Ingles", "0311", "LCPL", 1.0, "JI40678" }
+                    { 1, "Assistant Team Leader", 1672285964.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jake", "Hinton", "0341", "CPL", 1, "JH85964" },
+                    { 2, "Designated Marksman", 1683040678.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jack", "Ingles", "0311", "LCPL", 1, "JI40678" }
                 });
 
             migrationBuilder.CreateIndex(
