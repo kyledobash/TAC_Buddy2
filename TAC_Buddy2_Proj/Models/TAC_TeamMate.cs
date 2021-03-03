@@ -15,7 +15,6 @@ namespace TAC_Buddy2_Proj.Models
 
         [ForeignKey("TAC_TeamLeader_ID")]
         public double TAC_TeamLeader_ID { get; set; }
-        public TAC_TeamLeader TAC_TeamLeader { get; set; }
 
         public string Rank { get; set; }
 

@@ -14,11 +14,9 @@ namespace TAC_Buddy2_Proj.Models
 
         [ForeignKey("TAC_TeamLeader_ID")]
         public double? TAC_TeamLeader_ID { get; set; }
-        public TAC_TeamLeader TAC_TeamLeader { get; set; }
 
         [ForeignKey("TAC_TeamMate_ID")]
         public double? TAC_TeamMate_ID { get; set; }
-        public TAC_TeamMate TAC_TeamMate { get; set; }
 
         [Display(Name = "Item Name/Type")]
         public string EDL_Item_Name { get; set; }

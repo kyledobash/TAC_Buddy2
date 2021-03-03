@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using TAC_Buddy2_Proj.Models;
 using CoordinateSharp;
+using Microsoft.AspNetCore.Identity;
 
 namespace TAC_Buddy2_Proj.Data
 {
@@ -12,7 +13,7 @@ namespace TAC_Buddy2_Proj.Data
     {
         public DbSet<TAC_TeamLeader> TAC_TeamLeaders { get; set; }
         public DbSet<TAC_TeamMate> TAC_TeamMates { get; set; }
-        public DbSet<Map_Location> Map_Locations { get; set; }
+        //public DbSet<Map_Location> Map_Locations { get; set; }
         public DbSet<EDL_Item> EDL_Items { get; set; }
         
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -23,6 +24,16 @@ namespace TAC_Buddy2_Proj.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<IdentityRole>()
+             .HasData(
+                 new IdentityRole
+                 {
+                     Name = "TAC_TeamLeader",
+                     NormalizedName = "TAC_TeamLeader"
+                 }
+             );
+
 
             builder.Entity<TAC_TeamLeader>()
             .HasData(
@@ -119,17 +130,17 @@ namespace TAC_Buddy2_Proj.Data
                 }
             );
 
-            builder.Entity<Map_Location>()
-            .HasData(
-                new Map_Location
-                {
-                    Location_ID = 1,
-                    TAC_TeamLeader_ID = 1,
-                    MGRS_Coords = new MilitaryGridReferenceSystem("11S", "NT", 7864, 9553),
-                    Elevation = 1245,
-                    Lat_Long = new Coordinate(34.298, -116.145)
-                }
-            );
+            //builder.Entity<Map_Location>()
+            //.HasData(
+            //    new Map_Location
+            //    {
+            //        Location_ID = 1,
+            //        TAC_TeamLeader_ID = 1,
+            //        MGRS_Coords = new MilitaryGridReferenceSystem("11S", "NT", 7864, 9553),
+            //        Elevation = 1245,
+            //        Lat_Long = new Coordinate(34.298, -116.145)
+            //    }
+            //);
         }
     }
 }
