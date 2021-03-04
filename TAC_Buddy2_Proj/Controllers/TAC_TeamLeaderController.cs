@@ -102,35 +102,28 @@ namespace TAC_Buddy2_Proj.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TAC_TeamLeader_ID,IdentityUserId,Rank,FirstName,LastName,EDIPI_DoD_ID,Billet,MOS_designator,EDL_Last_Verified,ZAP_Number")] TAC_TeamLeader tAC_TeamLeader)
+        public IActionResult Edit(TAC_TeamLeader tAC_TeamLeader)
         {
-            if (id != tAC_TeamLeader.TAC_TeamLeader_ID)
+            try
             {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(tAC_TeamLeader);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TAC_TeamLeaderExists(tAC_TeamLeader.TAC_TeamLeader_ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                var TeamLeaderInDB = _context.TAC_TeamLeaders.Single(t => t.TAC_TeamLeader_ID == tAC_TeamLeader.TAC_TeamLeader_ID);
+                TeamLeaderInDB.Rank = tAC_TeamLeader.Rank;
+                TeamLeaderInDB.FirstName = tAC_TeamLeader.FirstName;
+                TeamLeaderInDB.LastName = tAC_TeamLeader.LastName;
+                TeamLeaderInDB.EDIPI_DoD_ID = tAC_TeamLeader.EDIPI_DoD_ID;
+                TeamLeaderInDB.Billet = tAC_TeamLeader.Billet;
+                TeamLeaderInDB.MOS_designator = tAC_TeamLeader.MOS_designator;
+                TeamLeaderInDB.EDL_Last_Verified = tAC_TeamLeader.EDL_Last_Verified;
+                TeamLeaderInDB.ZAP_Number = tAC_TeamLeader.ZAP_Number;
+                
+                _context.SaveChanges();
+                // return RedirectToAction("Index", "Developer");
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdentityUserId"] = new SelectList(_context.Users, "Id", "Id", tAC_TeamLeader.IdentityUserId);
-            return View(tAC_TeamLeader);
+            catch
+            {
+                return View();
+            }
         }
 
         // GET: TAC_TeamLeader/Delete/5
@@ -167,5 +160,49 @@ namespace TAC_Buddy2_Proj.Controllers
         {
             return _context.TAC_TeamLeaders.Any(e => e.TAC_TeamLeader_ID == id);
         }
-    }
+
+        //GET: TAC_TeamLeader/Edit/5
+        public async Task<IActionResult> EditTeamMate(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var teamMate = await _context.TAC_TeamMates.FindAsync(id);
+            if (teamMate == null)
+            {
+                return NotFound();
+            }
+            return View(teamMate);
+        }
+
+        // POST: TAC_TeamLeader/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditTeamMate(TAC_TeamMate tAC_TeamMate)
+        {
+            try
+            {
+                var TeamMateInDB = _context.TAC_TeamMates.Single(t => t.TAC_TeamMate_ID == tAC_TeamMate.TAC_TeamMate_ID);
+                TeamMateInDB.Rank = tAC_TeamMate.Rank;
+                TeamMateInDB.FirstName = tAC_TeamMate.FirstName;
+                TeamMateInDB.LastName = tAC_TeamMate.LastName;
+                TeamMateInDB.EDIPI_DoD_ID = tAC_TeamMate.EDIPI_DoD_ID;
+                TeamMateInDB.Billet = tAC_TeamMate.Billet;
+                TeamMateInDB.MOS_designator = tAC_TeamMate.MOS_designator;
+                TeamMateInDB.EDL_Last_Verified = tAC_TeamMate.EDL_Last_Verified;
+                TeamMateInDB.ZAP_Number = tAC_TeamMate.ZAP_Number;
+
+                _context.SaveChanges();
+                // return RedirectToAction("Index", "Developer");
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
+    }    
 }

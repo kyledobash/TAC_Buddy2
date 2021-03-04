@@ -1,19 +1,18 @@
-﻿@model TAC_Buddy2_Proj.Models.TAC_TeamLeader
+﻿@model TAC_Buddy2_Proj.Models.TAC_TeamMate
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "EditTeamMate";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
-
+<h1>Edit Team Member</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="EditTeamMate">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="TAC_TeamLeader_ID" />
+            <input type="hidden" asp-for="TAC_TeamMate_ID" />
             <div class="form-group">
                 <label asp-for="Rank" class="control-label"></label>
                 <input asp-for="Rank" class="form-control" />
