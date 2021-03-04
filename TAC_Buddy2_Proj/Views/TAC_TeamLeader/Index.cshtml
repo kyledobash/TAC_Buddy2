@@ -1,21 +1,15 @@
-﻿@model TAC_Buddy2_Proj.Models.TAC_TeamLeader
+﻿@model TAC_Buddy2_Proj.Models.TAC_TeamLeader;
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Your Information & EDL</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.IdentityUser)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Rank)
             </th>
@@ -46,9 +40,6 @@
     <tbody>
         <tr>
             <td>
-                @Html.DisplayFor(model => model.IdentityUserId)
-            </td>
-            <td>
                 @Html.DisplayFor(model => model.Rank)
             </td>
             <td>
@@ -73,10 +64,46 @@
                 @Html.DisplayFor(model => model.ZAP_Number)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@Model.TAC_TeamLeader_ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@Model.TAC_TeamLeader_ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a>
             </td>
         </tr>
+
     </tbody>
 </table>
+<h5>@Html.DisplayFor(model => model.Rank)
+    @Html.DisplayFor(model => model.LastName)'s EDL        
+</h5>
+<table class="edl_table">
+    <thead>
+        <tr>
+            <th>
+                Item Name / Type
+            </th>
+            <th>
+                Serial #
+            </th>
+            <th>
+                <a asp-action="Create" asp-route-id="@Model.TAC_TeamLeader_ID">Add New EDL Item</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var edlItem in ViewBag.TeamLeaderGear)
+        {
+        <tr>
+            <td>
+                @edlItem.EDL_Item_Name
+            </td>
+            <td>
+                @edlItem.EDL_Serial
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a> |
+                <a asp-action="Delete" asp-route-id="@Model.TAC_TeamLeader_ID"> Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

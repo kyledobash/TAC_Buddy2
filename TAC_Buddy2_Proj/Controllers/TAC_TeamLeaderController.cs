@@ -23,15 +23,24 @@ namespace TAC_Buddy2_Proj.Controllers
         // GET: TAC_TeamLeader
         public IActionResult Index()
         {
+
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var teamLeader = _context.TAC_TeamLeaders.Where(t => t.IdentityUserId == userId).SingleOrDefault();
+            var teamMembers = _context.TAC_TeamMates.Where(t => t.TAC_TeamLeader_ID == teamLeader.TAC_TeamLeader_ID).ToList();
+            var teamLeaderGear = _context.EDL_Items.Where(e => e.TAC_TeamLeader_ID == teamLeader.TAC_TeamLeader_ID).ToList();
+
+            //ViewBag.EdlItems = _context.EDL_Items;
+            ViewBag.TeamMembers = teamMembers;
+            ViewBag.TeamLeaderGear = teamLeaderGear;
+            
+
             if (teamLeader == null)
             {
                 return RedirectToAction(nameof(Create));
             }
             else
             {
-                return View();
+                return View(teamLeader);
             }
         }
 
