@@ -46,7 +46,7 @@
     <tbody>
         <tr>
             <td>
-                @Html.DisplayFor(model => model.IdentityUser.Id)
+                @Html.DisplayFor(model => model.IdentityUserId)
             </td>
             <td>
                 @Html.DisplayFor(model => model.Rank)
@@ -73,9 +73,9 @@
                 @Html.DisplayFor(model => model.ZAP_Number)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@this.Model.TAC_TeamLeader_ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@this.Model.TAC_TeamLeader_ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@this.Model.TAC_TeamLeader_ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@Model.TAC_TeamLeader_ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@Model.TAC_TeamLeader_ID">Delete</a>
             </td>
         </tr>
     </tbody>

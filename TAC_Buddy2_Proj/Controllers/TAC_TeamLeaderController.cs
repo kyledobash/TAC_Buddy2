@@ -36,7 +36,7 @@ namespace TAC_Buddy2_Proj.Controllers
         }
 
         // GET: TAC_TeamLeader/Details/5
-        public async Task<IActionResult> Details(double? id)
+        public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
@@ -76,7 +76,7 @@ namespace TAC_Buddy2_Proj.Controllers
         }
 
         // GET: TAC_TeamLeader/Edit/5
-        public async Task<IActionResult> Edit(double? id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -97,7 +97,7 @@ namespace TAC_Buddy2_Proj.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(double id, [Bind("TAC_TeamLeader_ID,IdentityUserId,Rank,FirstName,LastName,EDIPI_DoD_ID,Billet,MOS_designator,EDL_Last_Verified,ZAP_Number")] TAC_TeamLeader tAC_TeamLeader)
+        public async Task<IActionResult> Edit(int id, [Bind("TAC_TeamLeader_ID,IdentityUserId,Rank,FirstName,LastName,EDIPI_DoD_ID,Billet,MOS_designator,EDL_Last_Verified,ZAP_Number")] TAC_TeamLeader tAC_TeamLeader)
         {
             if (id != tAC_TeamLeader.TAC_TeamLeader_ID)
             {
@@ -129,7 +129,7 @@ namespace TAC_Buddy2_Proj.Controllers
         }
 
         // GET: TAC_TeamLeader/Delete/5
-        public async Task<IActionResult> Delete(double? id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -150,7 +150,7 @@ namespace TAC_Buddy2_Proj.Controllers
         // POST: TAC_TeamLeader/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(double id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var tAC_TeamLeader = await _context.TAC_TeamLeaders.FindAsync(id);
             _context.TAC_TeamLeaders.Remove(tAC_TeamLeader);
@@ -158,7 +158,7 @@ namespace TAC_Buddy2_Proj.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TAC_TeamLeaderExists(double id)
+        private bool TAC_TeamLeaderExists(int id)
         {
             return _context.TAC_TeamLeaders.Any(e => e.TAC_TeamLeader_ID == id);
         }
