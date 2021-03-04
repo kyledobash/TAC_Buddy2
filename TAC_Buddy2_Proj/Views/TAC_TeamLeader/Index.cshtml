@@ -1,9 +1,22 @@
-﻿@model TAC_Buddy2_Proj.Models.TAC_TeamLeader;
+﻿@model TAC_Buddy2_Proj.Models.TeamLeaderTeamMateAndEDL;
 
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<style>
+    .table {
+        margin-bottom: 25px;
+    }
+    .edl_info {
+        margin-bottom: 75px;
+        margin-left: 25px;
+    }
+    td, th {
+        padding-right: 30px;
+    }
+</style>
 
 <h1>Your Information & EDL</h1>
 
@@ -11,28 +24,28 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Rank)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.Rank)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FirstName)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.FirstName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.LastName)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.LastName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EDIPI_DoD_ID)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.EDIPI_DoD_ID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Billet)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.Billet)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MOS_designator)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.MOS_designator)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EDL_Last_Verified)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.EDL_Last_Verified)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ZAP_Number)
+                @Html.DisplayNameFor(model => model.TAC_TeamLeader.ZAP_Number)
             </th>
             <th></th>
         </tr>
@@ -40,136 +53,182 @@
     <tbody>
         <tr>
             <td>
-                @Html.DisplayFor(model => model.Rank)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.Rank)
             </td>
             <td>
-                @Html.DisplayFor(model => model.FirstName)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.FirstName)
             </td>
             <td>
-                @Html.DisplayFor(model => model.LastName)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.LastName)
             </td>
             <td>
-                @Html.DisplayFor(model => model.EDIPI_DoD_ID)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.EDIPI_DoD_ID)
             </td>
             <td>
-                @Html.DisplayFor(model => model.Billet)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.Billet)
             </td>
             <td>
-                @Html.DisplayFor(model => model.MOS_designator)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.MOS_designator)
             </td>
             <td>
-                @Html.DisplayFor(model => model.EDL_Last_Verified)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.EDL_Last_Verified)
             </td>
             <td>
-                @Html.DisplayFor(model => model.ZAP_Number)
+                @Html.DisplayFor(model => model.TAC_TeamLeader.ZAP_Number)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a>
+                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Edit Info</a>
             </td>
         </tr>
 
     </tbody>
 </table>
-<h5>
-    @Html.DisplayFor(model => model.Rank)
-@Html.DisplayFor(model => model.LastName)'s EDL
-</h5>
-<table class="edl_table">
-    <thead>
-        <tr>
-            <th>
-                Item Name / Type
-            </th>
-            <th>
-                Serial #
-            </th>
-            <th>
-                <a asp-action="Create" asp-route-id="@Model.TAC_TeamLeader_ID">Add New EDL Item</a>
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var edlItem in ViewBag.TeamLeaderGear)
-        {
-            <tr>
-                <td>
-                    @edlItem.EDL_Item_Name
-                </td>
-                <td>
-                    @edlItem.EDL_Serial
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a> |
-                    <a asp-action="Delete" asp-route-id="@Model.TAC_TeamLeader_ID"> Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
-<h2>Team Information & EDL</h2>
-@foreach (var teamMate in ViewBag.TeamMembers)
-{
-    <table class="table">
+<div class="edl_info">
+    <h5>
+        @Html.DisplayFor(model => model.TAC_TeamLeader.Rank)
+        @Html.DisplayFor(model => model.TAC_TeamLeader.LastName)'s EDL
+    </h5>
+    <table class="edl_table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Rank)
+                    Item Name / Type
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
+                    Serial #
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.LastName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EDIPI_DoD_ID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Billet)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MOS_designator)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EDL_Last_Verified)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ZAP_Number)
+                    <a asp-action="Create" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Add New EDL Item</a>
                 </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>
-                    @teamMate.Rank
-                </td>
-                <td>
-                    @teamMate.FirstName
-                </td>
-                <td>
-                    @teamMate.LastName
-                </td>
-                <td>
-                    @teamMate.EDIPI_DoD_ID
-                </td>
-                <td>
-                    @teamMate.Billet
-                </td>
-                <td>
-                    @teamMate.MOS_designator
-                </td>
-                <td>
-                    @teamMate.EDL_Last_Verified
-                </td>
-                <td>
-                    @teamMate.ZAP_Number
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a>
-                </td>
-            </tr>
+            @foreach (var edlItem in Model.EDL_Items.Where(e => e.TAC_TeamLeader_ID == Model.TAC_TeamLeader.TAC_TeamLeader_ID).ToList())
+            {
+                <tr>
+                    <td>
+                        @edlItem.EDL_Item_Name
+                    </td>
+                    <td>
+                        @edlItem.EDL_Serial
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@edlItem.EDL_ID">Edit Info</a> |
+                        <a asp-action="Delete" asp-route-id="@edlItem.EDL_ID"> Delete</a>
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
-}
+    <a asp-action="Verify EDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
+</div>
+    <h1>Team Information & EDL</h1><a asp-action="AddTeamMate" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Add New Team Member</a>
+    @foreach (var teamMate in Model.TAC_TeamMates)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].Rank)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].FirstName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].LastName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].EDIPI_DoD_ID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].Billet)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].MOS_designator)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].EDL_Last_Verified)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.TAC_TeamMates[0].ZAP_Number)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @teamMate.Rank
+                    </td>
+                    <td>
+                        @teamMate.FirstName
+                    </td>
+                    <td>
+                        @teamMate.LastName
+                    </td>
+                    <td>
+                        @teamMate.EDIPI_DoD_ID
+                    </td>
+                    <td>
+                        @teamMate.Billet
+                    </td>
+                    <td>
+                        @teamMate.MOS_designator
+                    </td>
+                    <td>
+                        @teamMate.EDL_Last_Verified
+                    </td>
+                    <td>
+                        @teamMate.ZAP_Number
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@teamMate.TAC_TeamLeader_ID">Edit Info</a> |
+                        <a asp-action="Delete" asp-route-id="@teamMate.TAC_TeamLeader_ID">Remove Team Member</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="edl_info">
+            <h5>
+                @teamMate.Rank
+                @teamMate.LastName's EDL
+            </h5>
+            <table class="edl_table">
+                <thead>
+                    <tr>
+                        <th>
+                            Item Name / Type
+                        </th>
+                        <th>
+                            Serial #
+                        </th>
+                        <th>
+                            <a asp-action="Create" asp-route-id="@teamMate.TAC_TeamMate_ID">Add New EDL Item</a>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var edlItem in Model.EDL_Items.Where(e => e.TAC_TeamMate_ID == teamMate.TAC_TeamMate_ID).ToList())
+                    {
+                        <tr>
+                            <td>
+                                @edlItem.EDL_Item_Name
+                            </td>
+                            <td>
+                                @edlItem.EDL_Serial
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@edlItem.EDL_ID">Edit Info</a> |
+                                <a asp-action="Delete" asp-route-id="@edlItem.EDL_ID"> Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a asp-action="Verify EDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
+        </div>
+    }
+
