@@ -70,8 +70,9 @@
 
     </tbody>
 </table>
-<h5>@Html.DisplayFor(model => model.Rank)
-    @Html.DisplayFor(model => model.LastName)'s EDL        
+<h5>
+    @Html.DisplayFor(model => model.Rank)
+@Html.DisplayFor(model => model.LastName)'s EDL
 </h5>
 <table class="edl_table">
     <thead>
@@ -91,19 +92,84 @@
     <tbody>
         @foreach (var edlItem in ViewBag.TeamLeaderGear)
         {
-        <tr>
-            <td>
-                @edlItem.EDL_Item_Name
-            </td>
-            <td>
-                @edlItem.EDL_Serial
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a> |
-                <a asp-action="Delete" asp-route-id="@Model.TAC_TeamLeader_ID"> Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>
+                    @edlItem.EDL_Item_Name
+                </td>
+                <td>
+                    @edlItem.EDL_Serial
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a> |
+                    <a asp-action="Delete" asp-route-id="@Model.TAC_TeamLeader_ID"> Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
-
+<h2>Team Information & EDL</h2>
+@foreach (var teamMate in ViewBag.TeamMembers)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Rank)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EDIPI_DoD_ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Billet)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MOS_designator)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EDL_Last_Verified)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ZAP_Number)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @teamMate.Rank
+                </td>
+                <td>
+                    @teamMate.FirstName
+                </td>
+                <td>
+                    @teamMate.LastName
+                </td>
+                <td>
+                    @teamMate.EDIPI_DoD_ID
+                </td>
+                <td>
+                    @teamMate.Billet
+                </td>
+                <td>
+                    @teamMate.MOS_designator
+                </td>
+                <td>
+                    @teamMate.EDL_Last_Verified
+                </td>
+                <td>
+                    @teamMate.ZAP_Number
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model.TAC_TeamLeader_ID">Edit Info</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
