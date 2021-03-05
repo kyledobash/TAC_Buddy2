@@ -204,5 +204,34 @@ namespace TAC_Buddy2_Proj.Controllers
                 return View();
             }
         }
+
+        public IActionResult CreateTeamMate(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateTeamMate(TAC_TeamMate tAC_TeamMate, int id)
+        {
+            try
+            {
+                tAC_TeamMate.TAC_TeamLeader_ID = id;
+                _context.TAC_TeamMates.Add(tAC_TeamMate);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+
+
+                //job.EmployerId = id;
+
+                //_context.Jobs.Add(job);
+                //_context.SaveChanges();
+                //return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }    
 }

@@ -123,7 +123,7 @@
     </table>
     <a asp-action="Verify EDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
 </div>
-    <h1>Team Information & EDL</h1><a asp-action="AddTeamMate" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Add New Team Member</a>
+    <h1>Team Information & EDL</h1><a asp-action="CreateTeamMate" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Add New Team Member</a>
     @foreach (var teamMate in Model.TAC_TeamMates)
     {
         <table class="table">
