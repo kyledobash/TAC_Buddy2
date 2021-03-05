@@ -255,5 +255,39 @@ namespace TAC_Buddy2_Proj.Controllers
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> EditEDLItem(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var eDL_Item = await _context.EDL_Items.FindAsync(id);
+            if (eDL_Item == null)
+            {
+                return NotFound();
+            }
+            return View(eDL_Item);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult EditEDLItem(EDL_Item eDL_Item, int id)
+        {
+
+            try
+            {
+                var EDL_ItemInDB = _context.EDL_Items.Single(e => e.EDL_ID == id);
+                EDL_ItemInDB.EDL_Item_Name = eDL_Item.EDL_Item_Name;
+                EDL_ItemInDB.EDL_Serial = eDL_Item.EDL_Serial;
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }    
 }
