@@ -1,0 +1,33 @@
+﻿@model TAC_Buddy2_Proj.Models.EDL_Item
+
+@{
+    ViewData["Title"] = "DeleteEDLItem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Remove EDL Item</h1>
+
+<h3>Are you sure you want to remove @Model.EDL_Item_Name?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EDL_Item_Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EDL_Item_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EDL_Serial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EDL_Serial)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteEDLItem">
+        <input type="hidden" asp-for="EDL_ID" />
+        <input type="submit" value="Remove" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

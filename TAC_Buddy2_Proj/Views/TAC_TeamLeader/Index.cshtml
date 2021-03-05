@@ -115,13 +115,13 @@
                     </td>
                     <td>
                         <a asp-action="EditEDLItem" asp-route-id="@edlItem.EDL_ID">Edit Info</a> |
-                        <a asp-action="Delete" asp-route-id="@edlItem.EDL_ID"> Delete</a>
+                        <a asp-action="DeleteEDLItem" asp-route-id="@edlItem.EDL_ID"> Delete</a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a asp-action="Verify EDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
+    <a asp-action="VerifyTeamLeaderEDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
 </div>
     <h1>Team Information & EDL</h1><a asp-action="CreateTeamMate" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Add New Team Member</a>
     @foreach (var teamMate in Model.TAC_TeamMates)
@@ -222,13 +222,13 @@
                             </td>
                             <td>
                                 <a asp-action="EditEDLItem" asp-route-id="@edlItem.EDL_ID">Edit Info</a> |
-                                <a asp-action="Delete" asp-route-id="@edlItem.EDL_ID"> Delete</a>
+                                <a asp-action="DeleteEDLItem" asp-route-id="@edlItem.EDL_ID"> Delete</a>
                             </td>
                         </tr>
                     }
                 </tbody>
             </table>
-            <a asp-action="Verify EDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
+            <a asp-action="VerifyTeamMateEDL" asp-route-id="@Model.TAC_TeamLeader.TAC_TeamLeader_ID">Verify EDL</a>
         </div>
     }
 

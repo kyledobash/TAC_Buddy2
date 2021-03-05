@@ -289,5 +289,51 @@ namespace TAC_Buddy2_Proj.Controllers
                 return View();
             }
         }
+
+        // GET: TAC_TeamLeader/Delete/5
+        public async Task<IActionResult> DeleteEDLItem(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var eDL_Item = await _context.EDL_Items
+                .FirstOrDefaultAsync(e => e.EDL_ID == id);
+            if (eDL_Item == null)
+            {
+                return NotFound();
+            }
+
+            return View(eDL_Item);
+        }
+
+        // POST: TAC_TeamLeader/Delete/5
+        [HttpPost, ActionName("DeleteEDLItem")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteEDLItemConfirmed(int id)
+        {
+            var eDL_Item = await _context.EDL_Items.FindAsync(id);
+            _context.EDL_Items.Remove(eDL_Item);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        
+        public async Task<IActionResult> VerifyTeamLeaderEDL(int id)
+        {
+            var teamMember = await _context.TAC_TeamLeaders.FindAsync(id);
+            teamMember.EDL_Last_Verified = DateTime.Now;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> VerifyTeamMateEDL(int id)
+        {
+            var teamMember = await _context.TAC_TeamMates.FindAsync(id);
+            teamMember.EDL_Last_Verified = DateTime.Now;
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }    
 }
