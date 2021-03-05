@@ -27,8 +27,6 @@ namespace TAC_Buddy2_Proj.Controllers
             TeamLeaderTeamMateAndEDL teamLeaderTeamMateAndEDL = new TeamLeaderTeamMateAndEDL();
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             teamLeaderTeamMateAndEDL.TAC_TeamLeader = _context.TAC_TeamLeaders.Where(t => t.IdentityUserId == userId).SingleOrDefault();
-            teamLeaderTeamMateAndEDL.TAC_TeamMates = _context.TAC_TeamMates.Where(t => t.TAC_TeamLeader_ID == teamLeaderTeamMateAndEDL.TAC_TeamLeader.TAC_TeamLeader_ID).ToList();
-            teamLeaderTeamMateAndEDL.EDL_Items = _context.EDL_Items.ToList();
 
             if (teamLeaderTeamMateAndEDL.TAC_TeamLeader == null)
             {
@@ -36,6 +34,8 @@ namespace TAC_Buddy2_Proj.Controllers
             }
             else
             {
+                teamLeaderTeamMateAndEDL.TAC_TeamMates = _context.TAC_TeamMates.Where(t => t.TAC_TeamLeader_ID == teamLeaderTeamMateAndEDL.TAC_TeamLeader.TAC_TeamLeader_ID).ToList();
+                teamLeaderTeamMateAndEDL.EDL_Items = _context.EDL_Items.ToList();
                 return View(teamLeaderTeamMateAndEDL);
             }
         }
@@ -127,31 +127,30 @@ namespace TAC_Buddy2_Proj.Controllers
         }
 
         // GET: TAC_TeamLeader/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> DeleteTeamMate(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var tAC_TeamLeader = await _context.TAC_TeamLeaders
-                .Include(t => t.IdentityUser)
-                .FirstOrDefaultAsync(m => m.TAC_TeamLeader_ID == id);
-            if (tAC_TeamLeader == null)
+            var tAC_TeamMate = await _context.TAC_TeamMates
+                .FirstOrDefaultAsync(m => m.TAC_TeamMate_ID == id);
+            if (tAC_TeamMate == null)
             {
                 return NotFound();
             }
 
-            return View(tAC_TeamLeader);
+            return View(tAC_TeamMate);
         }
 
         // POST: TAC_TeamLeader/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteTeamMate")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteTeamMateConfirmed(int id)
         {
-            var tAC_TeamLeader = await _context.TAC_TeamLeaders.FindAsync(id);
-            _context.TAC_TeamLeaders.Remove(tAC_TeamLeader);
+            var tAC_TeamMate = await _context.TAC_TeamMates.FindAsync(id);
+            _context.TAC_TeamMates.Remove(tAC_TeamMate);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

@@ -10,8 +10,8 @@ using TAC_Buddy2_Proj.Data;
 namespace TAC_Buddy2_Proj.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210303203636_add-migration nuke")]
-    partial class addmigrationnuke
+    [Migration("20210305153040_nuke")]
+    partial class nuke
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,8 +50,8 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ab8cf581-6b80-4fec-b76b-0c6b2f111cc3",
-                            ConcurrencyStamp = "a9605bca-0cd5-40a5-a5eb-2af923d4886b",
+                            Id = "9c63ab65-1a8a-4df3-bf17-1cb7e4190e71",
+                            ConcurrencyStamp = "ea2318d7-b3f9-4b80-97b9-45b38d373342",
                             Name = "TAC_TeamLeader",
                             NormalizedName = "TAC_TeamLeader"
                         });
@@ -333,20 +333,6 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasIndex("IdentityUserId");
 
                     b.ToTable("TAC_TeamLeaders");
-
-                    b.HasData(
-                        new
-                        {
-                            TAC_TeamLeader_ID = 1,
-                            Billet = "Team Leader",
-                            EDIPI_DoD_ID = 1528906067.0,
-                            EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Kyle",
-                            LastName = "Dobash",
-                            MOS_designator = "0341",
-                            Rank = "CPL",
-                            ZAP_Number = "KD06067"
-                        });
                 });
 
             modelBuilder.Entity("TAC_Buddy2_Proj.Models.TAC_TeamMate", b =>

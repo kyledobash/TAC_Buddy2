@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TAC_Buddy2_Proj.Migrations
 {
-    public partial class addmigrationnuke : Migration
+    public partial class nuke : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -219,7 +219,7 @@ namespace TAC_Buddy2_Proj.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "ab8cf581-6b80-4fec-b76b-0c6b2f111cc3", "a9605bca-0cd5-40a5-a5eb-2af923d4886b", "TAC_TeamLeader", "TAC_TeamLeader" });
+                values: new object[] { "9c63ab65-1a8a-4df3-bf17-1cb7e4190e71", "ea2318d7-b3f9-4b80-97b9-45b38d373342", "TAC_TeamLeader", "TAC_TeamLeader" });
 
             migrationBuilder.InsertData(
                 table: "EDL_Items",
@@ -233,11 +233,6 @@ namespace TAC_Buddy2_Proj.Migrations
                     { 5, "M38 IAR", "1979TG143", null, 2 },
                     { 6, "PVS-14", "94858937", null, 2 }
                 });
-
-            migrationBuilder.InsertData(
-                table: "TAC_TeamLeaders",
-                columns: new[] { "TAC_TeamLeader_ID", "Billet", "EDIPI_DoD_ID", "EDL_Last_Verified", "FirstName", "IdentityUserId", "LastName", "MOS_designator", "Rank", "ZAP_Number" },
-                values: new object[] { 1, "Team Leader", 1528906067.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Kyle", null, "Dobash", "0341", "CPL", "KD06067" });
 
             migrationBuilder.InsertData(
                 table: "TAC_TeamMates",

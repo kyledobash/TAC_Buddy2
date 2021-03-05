@@ -35,20 +35,20 @@ namespace TAC_Buddy2_Proj.Data
              );
 
 
-            builder.Entity<TAC_TeamLeader>()
-            .HasData(
-                new TAC_TeamLeader
-                {
-                    TAC_TeamLeader_ID = 1,
-                    Rank = "CPL",
-                    FirstName = "Kyle",
-                    LastName = "Dobash",
-                    EDIPI_DoD_ID = 1528906067,
-                    Billet = "Team Leader",
-                    MOS_designator = "0341",
-                    ZAP_Number = "KD06067"
-                }
-             );
+            //builder.Entity<TAC_TeamLeader>()
+            //.HasData(
+            //    new TAC_TeamLeader
+            //    {
+            //        TAC_TeamLeader_ID = 1,
+            //        Rank = "CPL",
+            //        FirstName = "Kyle",
+            //        LastName = "Dobash",
+            //        EDIPI_DoD_ID = 1528906067,
+            //        Billet = "Team Leader",
+            //        MOS_designator = "0341",
+            //        ZAP_Number = "KD06067"
+            //    }
+            // );
 
             builder.Entity<TAC_TeamMate>()
             .HasData(
