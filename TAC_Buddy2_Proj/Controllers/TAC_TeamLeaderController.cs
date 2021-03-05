@@ -219,18 +219,41 @@ namespace TAC_Buddy2_Proj.Controllers
                 _context.TAC_TeamMates.Add(tAC_TeamMate);
                 _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
-
-
-                //job.EmployerId = id;
-
-                //_context.Jobs.Add(job);
-                //_context.SaveChanges();
-                //return RedirectToAction(nameof(Index));
             }
             catch
             {
                 return View();
             }
+        }
+
+        public IActionResult CreateEDLItemTeamLeader(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateEDLItemTeamLeader(EDL_Item eDL_Item, int id)
+        { 
+                eDL_Item.TAC_TeamLeader_ID = id;
+                _context.EDL_Items.Add(eDL_Item);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult CreateEDLItemTeamMate(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CreateEDLItemTeamMate(EDL_Item eDL_Item, int id)
+        {
+            eDL_Item.TAC_TeamMate_ID = id;
+            _context.EDL_Items.Add(eDL_Item);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(Index));
         }
     }    
 }
