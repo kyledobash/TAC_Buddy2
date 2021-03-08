@@ -367,179 +367,179 @@ namespace TAC_Buddy2_Proj.Controllers
         }
 
         [HttpPost]
-        public IActionResult MilsToDegrees(string stringMils)
+        public IActionResult MilsToDegrees(string stringMils, string ViewName)
         {
             double mils = Convert.ToDouble(stringMils);
-            ViewBag.MilsToDegrees = mils * 0.05625;
-            return View("Calculators");
+            ViewBag.MilsToDegrees = mils * 0.05625;            
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult DegreesToMils(string stringDegrees)
+        public IActionResult DegreesToMils(string stringDegrees, string ViewName)
         {
             double degrees = Convert.ToDouble(stringDegrees);
             ViewBag.DegreesToMils = degrees / 0.05625;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult MetersToFeet(string stringMeters)
+        public IActionResult MetersToFeet(string stringMeters, string ViewName)
         {
             double meters = Convert.ToDouble(stringMeters);
             ViewBag.MetersToFeet = meters * 3.28;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult FeetToMeters(string stringFeet)
+        public IActionResult FeetToMeters(string stringFeet, string ViewName)
         {
             double feet = Convert.ToDouble(stringFeet);
             ViewBag.FeetToMeters = feet / 3.28;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult MilsToMOA(string stringMils)
+        public IActionResult MilsToMOA(string stringMils, string ViewName)
         {
             double mils = Convert.ToDouble(stringMils);
             ViewBag.MilsToMOA = mils / 3.438;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult MOAToMils(string stringMOA)
+        public IActionResult MOAToMils(string stringMOA, string ViewName)
         {
             double MOA = Convert.ToDouble(stringMOA);
             ViewBag.MOAToMils = MOA * 3.438;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult MilesToKilometers(string stringMiles)
+        public IActionResult MilesToKilometers(string stringMiles, string ViewName)
         {
             double Miles = Convert.ToDouble(stringMiles);
             ViewBag.MilesToKilometers = Miles * 1.609344;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult KilometersToMiles(string stringKilometers)
+        public IActionResult KilometersToMiles(string stringKilometers, string ViewName)
         {
             double Kilometers = Convert.ToDouble(stringKilometers);
             ViewBag.KilometersToMiles = Kilometers / 1.609344;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult NauticalMilesToKilometers(string stringNauticalMiles)
+        public IActionResult NauticalMilesToKilometers(string stringNauticalMiles, string ViewName)
         {
             double NauticalMiles = Convert.ToDouble(stringNauticalMiles);
             ViewBag.NauticalMilesToKilometers = NauticalMiles * 1.852;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult KilometersToNauticalMiles(string stringKilometers)
+        public IActionResult KilometersToNauticalMiles(string stringKilometers, string ViewName)
         {
             double Kilometers = Convert.ToDouble(stringKilometers);
             ViewBag.KilometersToNauticalMiles = Kilometers * .5399568;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult KilogramsToPounds(string stringKilograms)
+        public IActionResult KilogramsToPounds(string stringKilograms, string ViewName)
         {
             double Kilograms = Convert.ToDouble(stringKilograms);
             ViewBag.KilogramsToPounds = Kilograms * 2.20462262;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult PoundsToKilograms(string stringPounds)
+        public IActionResult PoundsToKilograms(string stringPounds, string ViewName)
         {
             double Pounds = Convert.ToDouble(stringPounds);
             ViewBag.PoundsToKilograms = Pounds * 0.45359237;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult GramsToOunces(string stringGrams)
+        public IActionResult GramsToOunces(string stringGrams, string ViewName)
         {
             double Grams = Convert.ToDouble(stringGrams);
             ViewBag.GramsToOunces = Grams * 0.03527396;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult OuncesToGrams(string stringOunces)
+        public IActionResult OuncesToGrams(string stringOunces, string ViewName)
         {
             double Ounces = Convert.ToDouble(stringOunces);
             ViewBag.OuncesToGrams = Ounces * 28.34952;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult CelsiusToFarenheit(string stringCelsius)
+        public IActionResult CelsiusToFarenheit(string stringCelsius, string ViewName)
         {
             double Celsius = Convert.ToDouble(stringCelsius);
             ViewBag.CelsiusToFarenheit = (Celsius * 1.8) + 32;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult FarenheitToCelsius(string stringFarenheit)
+        public IActionResult FarenheitToCelsius(string stringFarenheit, string ViewName)
         {
             double Farenheit = Convert.ToDouble(stringFarenheit);
             ViewBag.FarenheitToCelsius = (Farenheit - 32) / 1.8;
-            return View("Calculators");
+            return View(ViewName);
         }
         
         [HttpPost]
-        public IActionResult FeetPerSecondToMetersPerSecond(string stringFPS)
+        public IActionResult FeetPerSecondToMetersPerSecond(string stringFPS, string ViewName)
         {
             double FPS = Convert.ToDouble(stringFPS);
             ViewBag.FeetPerSecondToMetersPerSecond = FPS * .3048;
-            return View("Calculators");
+            return View(ViewName);
         }
         
         [HttpPost]
-        public IActionResult MetersPerSecondToFeetPerSecond(string stringMPS)
+        public IActionResult MetersPerSecondToFeetPerSecond(string stringMPS, string ViewName)
         {
             double MPS = Convert.ToDouble(stringMPS);
             ViewBag.MetersPerSecondToFeetPerSecond = MPS * 3.28084;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult MilesPerGallonToKilometersPerLiter(string stringMPG)
+        public IActionResult MilesPerGallonToKilometersPerLiter(string stringMPG, string ViewName)
         {
             double MPG = Convert.ToDouble(stringMPG);
             ViewBag.MilesPerGallonToKilometersPerLiter = MPG * 0.4251;
-            return View("Calculators");
+            return View(ViewName);
         }
         
         [HttpPost]
-        public IActionResult KilometersPerLiterToMilesPerGallon(string stringKPL)
+        public IActionResult KilometersPerLiterToMilesPerGallon(string stringKPL, string ViewName)
         {
             double KPL = Convert.ToDouble(stringKPL);
             ViewBag.KilometersPerLiterToMilesPerGallon = KPL * 2.3521;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult YardsToMeters(string stringYards)
+        public IActionResult YardsToMeters(string stringYards, string ViewName)
         {
             double Yards = Convert.ToDouble(stringYards);
             ViewBag.YardsToMeters = Yards * .9144;
-            return View("Calculators");
+            return View(ViewName);
         }
 
         [HttpPost]
-        public IActionResult MetersToYards(string stringMeters)
+        public IActionResult MetersToYards(string stringMeters, string ViewName)
         {
             double Meters = Convert.ToDouble(stringMeters);
             ViewBag.MetersToYards = Meters * 1.093613;
-            return View("Calculators");
+            return View(ViewName);
         }
     }    
 }

@@ -78,7 +78,10 @@
     <form action="MilsToDegrees" method="post">
         <tr>
             <td><b>Mils -> Degrees</b></td>
-            <td><input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName"/>
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Degrees:</b>    @ViewBag.MilsToDegrees <br /></td>
@@ -87,7 +90,10 @@
     <tr>
         <form action="DegreesToMils" method="post">
             <td><b>Degrees -> Mils</b></td>
-            <td><input type="text" value="Enter Degrees Here" name="stringDegrees" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Degrees Here" name="stringDegrees" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName"/>
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Mils:</b>    @ViewBag.DegreesToMils <br /></td>
@@ -97,7 +103,10 @@
     <tr>
         <form action="MetersToFeet" method="post">
             <td><b>Meters -> Feet</b></td>
-            <td><input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName"/>
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Feet:</b>    @ViewBag.MetersToFeet <br /></td>
@@ -106,7 +115,10 @@
     <tr>
         <form action="FeetToMeters" method="post">
             <td><b>Feet -> Meters</b></td>
-            <td><input type="text" value="Enter Feet Here" name="stringFeet" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Feet Here" name="stringFeet" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Meters:</b>    @ViewBag.FeetToMeters <br /></td>
@@ -116,7 +128,10 @@
     <tr>
         <form action="MilsToMOA" method="post">
             <td><b>Mils -> MOA</b></td>
-            <td><input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />            
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>MOA:</b>    @ViewBag.MilsToMOA<br /></td>
@@ -125,7 +140,10 @@
     <tr>
         <form action="MOAToMils" method="post">
             <td><b>MOA -> Mils</b></td>
-            <td><input type="text" value="Enter MOA Here" name="stringMOA" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter MOA Here" name="stringMOA" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Mils:</b>    @ViewBag.MOAToMils <br /></td>
@@ -135,7 +153,10 @@
     <tr>
         <form action="MilesToKilometers" method="post">
             <td><b>Miles -> Kilometers</b></td>
-            <td><input type="text" value="Enter Miles Here" name="stringMiles" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Miles Here" name="stringMiles" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Kilometers:</b>    @ViewBag.MilesToKilometers <br /></td>
@@ -144,7 +165,10 @@
     <tr>
         <form action="KilometersToMiles" method="post">
             <td><b>Kilometers -> Miles</b></td>
-            <td><input type="text" value="Enter Kilometers Here" name="stringKilometers" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Kilometers Here" name="stringKilometers" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Miles:</b>    @ViewBag.KilometersToMiles <br /></td>
@@ -154,7 +178,10 @@
     <tr>
         <form action="NauticalMilesToKilometers" method="post">
             <td><b>Nautical Miles -> Kilometers</b></td>
-            <td><input type="text" value="Enter Nautical Miles Here" name="stringNauticalMiles" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Nautical Miles Here" name="stringNauticalMiles" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Kilometers:</b>    @ViewBag.NauticalMilesToKilometers <br /></td>
@@ -163,7 +190,10 @@
     <tr>
         <form action="KilometersToNauticalMiles" method="post">
             <td><b>Kilometers -> Nautical Miles</b></td>
-            <td><input type="text" value="Enter Kilometers Here" name="stringKilometers" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Kilometers Here" name="stringKilometers" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Miles:</b>    @ViewBag.KilometersToNauticalMiles <br /></td>
@@ -173,7 +203,10 @@
     <tr>
         <form action="KilogramsToPounds" method="post">
             <td><b>Kilograms -> Pounds</b></td>
-            <td><input type="text" value="Enter Kilograms Here" name="stringKilograms" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Kilograms Here" name="stringKilograms" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Pounds:</b>    @ViewBag.KilogramsToPounds <br /></td>
@@ -182,7 +215,10 @@
     <tr>
         <form action="PoundsToKilograms" method="post">
             <td><b>Pounds -> Kilograms</b></td>
-            <td><input type="text" value="Enter Pounds Here" name="stringPounds" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Pounds Here" name="stringPounds" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Kilograms:</b>    @ViewBag.PoundsToKilograms <br /></td>
@@ -192,7 +228,10 @@
     <tr>
         <form action="GramsToOunces" method="post">
             <td><b>Grams -> Ounces</b></td>
-            <td><input type="text" value="Enter Grams Here" name="stringGrams" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Grams Here" name="stringGrams" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Ounces:</b>    @ViewBag.GramsToOunces <br /></td>
@@ -201,7 +240,10 @@
     <tr>
         <form action="OuncesToGrams" method="post">
             <td><b>Ounces -> Grams</b></td>
-            <td><input type="text" value="Enter Ounces Here" name="stringOunces" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Ounces Here" name="stringOunces" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Grams:</b>    @ViewBag.OuncesToGrams <br /></td>
@@ -211,7 +253,10 @@
     <tr>
         <form action="CelsiusToFarenheit" method="post">
             <td><b>Celsius -> Farenheit</b></td>
-            <td><input type="text" value="Enter Degrees Celsius Here" name="stringCelsius" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Degrees Celsius Here" name="stringCelsius" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Degrees Farenheit:</b>    @ViewBag.CelsiusToFarenheit <br /></td>
@@ -220,7 +265,10 @@
     <tr>
         <form action="FarenheitToCelsius" method="post">
             <td><b>Farenheit -> Celsius</b></td>
-            <td><input type="text" value="Enter Degrees Farenheit Here" name="stringFarenheit" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Degrees Farenheit Here" name="stringFarenheit" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Degrees Celsius:</b>    @ViewBag.FarenheitToCelsius <br /></td>
@@ -230,7 +278,10 @@
     <tr>
         <form action="FeetPerSecondToMetersPerSecond" method="post">
             <td><b>Feet Per Second -> Meters Per Second</b></td>
-            <td><input type="text" value="Enter Feet Per Second Here" name="stringFPS" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Feet Per Second Here" name="stringFPS" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Meters Per Second:</b>    @ViewBag.FeetPerSecondToMetersPerSecond <br /></td>
@@ -239,7 +290,10 @@
     <tr>
         <form action="MetersPerSecondToFeetPerSecond" method="post">
             <td><b>Meters Per Second -> Feet Per Second</b></td>
-            <td><input type="text" value="Enter Meters Per Second Here" name="stringMPS" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Meters Per Second Here" name="stringMPS" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Feet Per Second:</b>    @ViewBag.MetersPerSecondToFeetPerSecond <br /></td>
@@ -249,7 +303,10 @@
     <tr>
         <form action="MilesPerGallonToKilometersPerLiter" method="post">
             <td><b>Miles Per Gallon -> Kilometers Per Liter</b></td>
-            <td><input type="text" value="Enter MPG Here" name="stringMPG" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter MPG Here" name="stringMPG" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Kilometers Per Liter:</b>    @ViewBag.MilesPerGallonToKilometersPerLiter <br /></td>
@@ -258,7 +315,10 @@
     <tr>
         <form action="KilometersPerLiterToMilesPerGallon" method="post">
             <td><b>Kilometers Per Liter -> Miles Per Gallon</b></td>
-            <td><input type="text" value="Enter KPL Here" name="stringKPL" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter KPL Here" name="stringKPL" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Miles Per Gallon:</b>    @ViewBag.KilometersPerLiterToMilesPerGallon <br /></td>
@@ -268,7 +328,10 @@
     <tr>
         <form action="YardsToMeters" method="post">
             <td><b>Yards -> Meters</b></td>
-            <td><input type="text" value="Enter Yards Here" name="stringYards" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Yards Here" name="stringYards" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Meters:</b>    @ViewBag.YardsToMeters <br /></td>
@@ -277,7 +340,10 @@
     <tr>
         <form action="MetersToYards" method="post">
             <td><b>Meters -> Yards</b></td>
-            <td><input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td>
+                <input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" />
+                <input type="hidden" value="Calculators" name="ViewName" />
+            </td>
             <td colspan="2"><input type="submit" value="Calculate" /></td>
             <td></td>
             <td> <b>Yards:</b>    @ViewBag.MetersToYards<br /></td>
