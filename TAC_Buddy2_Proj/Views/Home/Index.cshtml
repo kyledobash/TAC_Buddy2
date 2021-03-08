@@ -2,7 +2,15 @@
     ViewData["Title"] = "Home Page";
 }
 
+<style>
+    img {
+        width: 250px;
+        height: auto;
+    }
+</style>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img src="TAC_Buddy_Logo.png" alt="alt text here"/>
+    <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Click Here to Register</a>
+    <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Click Here to Login</a>
 </div>
