@@ -1,0 +1,286 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    td {
+        padding-left: 20px;
+    }
+
+    .dropbtn {
+        background-color: #8a8d8e;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+    }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #808384;
+    }
+</style>
+
+<h2>Conversion Calculators</h2>
+</br>
+
+
+<table>
+    <tr>
+        <td>           
+            <div class="dropdown">
+                <button class="dropbtn">Filter by type:</button>
+                <div class="dropdown-content">
+                    <a asp-action="GroundNavigationCalculators" asp-controller="TAC_TeamLeader">Ground Navigation</a>
+                    <a asp-action="TacticalAirControlCalculators" asp-controller="TAC_TeamLeader">Tactical Air Control</a>
+                    <a asp-action="SurfaceFireSupportCalculators" asp-controller="TAC_TeamLeader">Surface Fire Support</a>
+                    <a asp-action="FieldMedicineCalculators" asp-controller="TAC_TeamLeader">Field Medicine</a>
+                    <a asp-action="DemolitionsCalculators" asp-controller="TAC_TeamLeader">Demolitions</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr><td><br /></td></tr>
+    <form action="MilsToDegrees" method="post">
+        <tr>
+            <td><b>Mils -> Degrees</b></td>
+            <td><input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Degrees:</b>    @ViewBag.MilsToDegrees <br /></td>
+        </tr>
+    </form>
+    <tr>
+        <form action="DegreesToMils" method="post">
+            <td><b>Degrees -> Mils</b></td>
+            <td><input type="text" value="Enter Degrees Here" name="stringDegrees" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Mils:</b>    @ViewBag.DegreesToMils <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="MetersToFeet" method="post">
+            <td><b>Meters -> Feet</b></td>
+            <td><input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Feet:</b>    @ViewBag.MetersToFeet <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="FeetToMeters" method="post">
+            <td><b>Feet -> Meters</b></td>
+            <td><input type="text" value="Enter Feet Here" name="stringFeet" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Meters:</b>    @ViewBag.FeetToMeters <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="MilsToMOA" method="post">
+            <td><b>Mils -> MOA</b></td>
+            <td><input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>MOA:</b>    @ViewBag.MilsToMOA<br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="MOAToMils" method="post">
+            <td><b>MOA -> Mils</b></td>
+            <td><input type="text" value="Enter MOA Here" name="stringMOA" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Mils:</b>    @ViewBag.MOAToMils <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="MilesToKilometers" method="post">
+            <td><b>Miles -> Kilometers</b></td>
+            <td><input type="text" value="Enter Miles Here" name="stringMiles" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Kilometers:</b>    @ViewBag.MilesToKilometers <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="KilometersToMiles" method="post">
+            <td><b>Kilometers -> Miles</b></td>
+            <td><input type="text" value="Enter Kilometers Here" name="stringKilometers" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Miles:</b>    @ViewBag.KilometersToMiles <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="NauticalMilesToKilometers" method="post">
+            <td><b>Nautical Miles -> Kilometers</b></td>
+            <td><input type="text" value="Enter Nautical Miles Here" name="stringNauticalMiles" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Kilometers:</b>    @ViewBag.NauticalMilesToKilometers <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="KilometersToNauticalMiles" method="post">
+            <td><b>Kilometers -> Nautical Miles</b></td>
+            <td><input type="text" value="Enter Kilometers Here" name="stringKilometers" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Miles:</b>    @ViewBag.KilometersToNauticalMiles <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="KilogramsToPounds" method="post">
+            <td><b>Kilograms -> Pounds</b></td>
+            <td><input type="text" value="Enter Kilograms Here" name="stringKilograms" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Pounds:</b>    @ViewBag.KilogramsToPounds <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="PoundsToKilograms" method="post">
+            <td><b>Pounds -> Kilograms</b></td>
+            <td><input type="text" value="Enter Pounds Here" name="stringPounds" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Kilograms:</b>    @ViewBag.PoundsToKilograms <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="GramsToOunces" method="post">
+            <td><b>Grams -> Ounces</b></td>
+            <td><input type="text" value="Enter Grams Here" name="stringGrams" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Ounces:</b>    @ViewBag.GramsToOunces <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="OuncesToGrams" method="post">
+            <td><b>Ounces -> Grams</b></td>
+            <td><input type="text" value="Enter Ounces Here" name="stringOunces" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Grams:</b>    @ViewBag.OuncesToGrams <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="CelsiusToFarenheit" method="post">
+            <td><b>Celsius -> Farenheit</b></td>
+            <td><input type="text" value="Enter Degrees Celsius Here" name="stringCelsius" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Degrees Farenheit:</b>    @ViewBag.CelsiusToFarenheit <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="FarenheitToCelsius" method="post">
+            <td><b>Farenheit -> Celsius</b></td>
+            <td><input type="text" value="Enter Degrees Farenheit Here" name="stringFarenheit" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Degrees Celsius:</b>    @ViewBag.FarenheitToCelsius <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="FeetPerSecondToMetersPerSecond" method="post">
+            <td><b>Feet Per Second -> Meters Per Second</b></td>
+            <td><input type="text" value="Enter Feet Per Second Here" name="stringFPS" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Meters Per Second:</b>    @ViewBag.FeetPerSecondToMetersPerSecond <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="MetersPerSecondToFeetPerSecond" method="post">
+            <td><b>Meters Per Second -> Feet Per Second</b></td>
+            <td><input type="text" value="Enter Meters Per Second Here" name="stringMPS" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Feet Per Second:</b>    @ViewBag.MetersPerSecondToFeetPerSecond <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="MilesPerGallonToKilometersPerLiter" method="post">
+            <td><b>Miles Per Gallon -> Kilometers Per Liter</b></td>
+            <td><input type="text" value="Enter MPG Here" name="stringMPG" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Kilometers Per Liter:</b>    @ViewBag.MilesPerGallonToKilometersPerLiter <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="KilometersPerLiterToMilesPerGallon" method="post">
+            <td><b>Kilometers Per Liter -> Miles Per Gallon</b></td>
+            <td><input type="text" value="Enter KPL Here" name="stringKPL" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Miles Per Gallon:</b>    @ViewBag.KilometersPerLiterToMilesPerGallon <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="YardsToMeters" method="post">
+            <td><b>Yards -> Meters</b></td>
+            <td><input type="text" value="Enter Yards Here" name="stringYards" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Meters:</b>    @ViewBag.YardsToMeters <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="MetersToYards" method="post">
+            <td><b>Meters -> Yards</b></td>
+            <td><input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Yards:</b>    @ViewBag.MetersToYards<br /></td>
+        </form>
+    </tr>
+</table>

@@ -24,6 +24,7 @@ namespace TAC_Buddy2_Proj.Controllers
             return View();
         }
 
+
         public IActionResult Privacy()
         {
             return View();

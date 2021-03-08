@@ -1,0 +1,153 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    td {
+        padding-left: 20px;
+    }
+
+    .dropbtn {
+        background-color: #8a8d8e;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+    }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #808384;
+    }
+</style>
+
+<h2>Surface Fire Support Calculators</h2>
+</br>
+
+
+<table>
+    <tr>
+        <td>
+            <div class="dropdown">
+                <button class="dropbtn">Filter by type:</button>
+                <div class="dropdown-content">
+                    <a asp-action="Calculators" asp-controller="TAC_TeamLeader">View All</a>
+                    <a asp-action="GroundNavigationCalculators" asp-controller="TAC_TeamLeader">Ground Navigation</a>
+                    <a asp-action="TacticalAirControlCalculators" asp-controller="TAC_TeamLeader">Tactical Air Control</a>
+                    <a asp-action="FieldMedicineCalculators" asp-controller="TAC_TeamLeader">Field Medicine</a>
+                    <a asp-action="DemolitionsCalculators" asp-controller="TAC_TeamLeader">Demolitions</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr><td><br /></td></tr>
+    <form action="MilsToDegrees" method="post">
+        <tr>
+            <td><b>Mils -> Degrees</b></td>
+            <td><input type="text" value="Enter Mils Here" name="stringMils" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Degrees:</b>    @ViewBag.MilsToDegrees <br /></td>
+        </tr>
+    </form>
+    <tr>
+        <form action="DegreesToMils" method="post">
+            <td><b>Degrees -> Mils</b></td>
+            <td><input type="text" value="Enter Degrees Here" name="stringDegrees" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Mils:</b>    @ViewBag.DegreesToMils <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="MetersToFeet" method="post">
+            <td><b>Meters -> Feet</b></td>
+            <td><input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Feet:</b>    @ViewBag.MetersToFeet <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="FeetToMeters" method="post">
+            <td><b>Feet -> Meters</b></td>
+            <td><input type="text" value="Enter Feet Here" name="stringFeet" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Meters:</b>    @ViewBag.FeetToMeters <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="FeetPerSecondToMetersPerSecond" method="post">
+            <td><b>Feet Per Second -> Meters Per Second</b></td>
+            <td><input type="text" value="Enter Feet Per Second Here" name="stringFPS" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Meters Per Second:</b>    @ViewBag.FeetPerSecondToMetersPerSecond <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="MetersPerSecondToFeetPerSecond" method="post">
+            <td><b>Meters Per Second -> Feet Per Second</b></td>
+            <td><input type="text" value="Enter Meters Per Second Here" name="stringMPS" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Feet Per Second:</b>    @ViewBag.MetersPerSecondToFeetPerSecond <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="YardsToMeters" method="post">
+            <td><b>Yards -> Meters</b></td>
+            <td><input type="text" value="Enter Yards Here" name="stringYards" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Meters:</b>    @ViewBag.YardsToMeters <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="MetersToYards" method="post">
+            <td><b>Meters -> Yards</b></td>
+            <td><input type="text" value="Enter Meters Here" name="stringMeters" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Yards:</b>    @ViewBag.MetersToYards<br /></td>
+        </form>
+    </tr>
+</table>

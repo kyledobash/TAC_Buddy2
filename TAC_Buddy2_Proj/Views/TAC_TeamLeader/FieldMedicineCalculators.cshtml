@@ -1,0 +1,135 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    td {
+        padding-left: 20px;
+    }
+
+    .dropbtn {
+        background-color: #8a8d8e;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+    }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #808384;
+    }
+</style>
+
+<h2>Field Medicine Calculators</h2>
+</br>
+
+
+<table>
+    <tr>
+        <td>
+            <div class="dropdown">
+                <button class="dropbtn">Filter by type:</button>
+                <div class="dropdown-content">
+                    <a asp-action="View All" asp-controller="TAC_TeamLeader">View All</a>
+                    <a asp-action="GroundNavigationCalculators" asp-controller="TAC_TeamLeader">Ground Navigation</a>
+                    <a asp-action="TacticalAirControlCalculators" asp-controller="TAC_TeamLeader">Tactical Air Control</a>
+                    <a asp-action="SurfaceFireSupportCalculators" asp-controller="TAC_TeamLeader">Surface Fire Support</a>
+                    <a asp-action="DemolitionsCalculators" asp-controller="TAC_TeamLeader">Demolitions</a>
+                </div>
+            </div>
+        </td>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="KilogramsToPounds" method="post">
+            <td><b>Kilograms -> Pounds</b></td>
+            <td><input type="text" value="Enter Kilograms Here" name="stringKilograms" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Pounds:</b>    @ViewBag.KilogramsToPounds <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="PoundsToKilograms" method="post">
+            <td><b>Pounds -> Kilograms</b></td>
+            <td><input type="text" value="Enter Pounds Here" name="stringPounds" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Kilograms:</b>    @ViewBag.PoundsToKilograms <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="GramsToOunces" method="post">
+            <td><b>Grams -> Ounces</b></td>
+            <td><input type="text" value="Enter Grams Here" name="stringGrams" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Ounces:</b>    @ViewBag.GramsToOunces <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="OuncesToGrams" method="post">
+            <td><b>Ounces -> Grams</b></td>
+            <td><input type="text" value="Enter Ounces Here" name="stringOunces" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Grams:</b>    @ViewBag.OuncesToGrams <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+    <tr>
+        <form action="CelsiusToFarenheit" method="post">
+            <td><b>Celsius -> Farenheit</b></td>
+            <td><input type="text" value="Enter Degrees Celsius Here" name="stringCelsius" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Degrees Farenheit:</b>    @ViewBag.CelsiusToFarenheit <br /></td>
+        </form>
+    </tr>
+    <tr>
+        <form action="FarenheitToCelsius" method="post">
+            <td><b>Farenheit -> Celsius</b></td>
+            <td><input type="text" value="Enter Degrees Farenheit Here" name="stringFarenheit" size="30" onfocus="value=''" style="color:grey;" /></td>
+            <td colspan="2"><input type="submit" value="Calculate" /></td>
+            <td></td>
+            <td> <b>Degrees Celsius:</b>    @ViewBag.FarenheitToCelsius <br /></td>
+        </form>
+    </tr>
+    <tr><td><br /></td></tr>
+</table>
