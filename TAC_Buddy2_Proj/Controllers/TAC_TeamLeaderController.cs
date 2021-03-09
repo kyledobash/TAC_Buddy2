@@ -366,6 +366,11 @@ namespace TAC_Buddy2_Proj.Controllers
             return View();
         }
 
+        public IActionResult CommTemplates()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult MilsToDegrees(string stringMils, string ViewName)
         {

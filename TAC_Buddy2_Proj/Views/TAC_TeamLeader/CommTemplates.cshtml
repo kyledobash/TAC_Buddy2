@@ -1,0 +1,235 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<style>
+    td {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding-bottom: 20px;
+    }
+
+    table {
+        margin-bottom: 70px;
+    }
+</style>
+
+
+
+<h3><b><u>Z-MIST REPORT</u></b></h3>
+<table>
+    <tr>
+        <td>
+            <h4><u>Z:</u></h4>
+        </td>
+        <td>
+            <h5>ZAP Number:</h5>
+            <input type="text" value="Enter Casualty ZAP #" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>M:</u></h4>
+        </td>
+        <td>
+            <h5>Mechanism of Injury:</h5>
+            <input type="text" value="Enter Mechanism of Injury" size="30" onfocus="value=''" style="color:black;" />
+            ex. 'IED blast'
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>I:</u></h4>
+        </td>
+        <td>
+            <h5>Injury Sustained:</h5>
+            <input type="text" value="Enter Injury Sustained" size="30" onfocus="value=''" style="color:black;" />
+            ex. 'Lacerations to Upper Left Leg'
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>S:</u></h4>
+        </td>
+        <td>
+            <h5>Signs & Symptoms:</h5>
+            <input type="text" value="Enter Symptoms" size="30" onfocus="value=''" style="color:black;" />
+            ex. 'Hemorrhaging & Shock'
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>T:</u></h4>
+        </td>
+        <td>
+            <h5>Treament Rendered:</h5>
+            <input type="text" value="Enter Treament Rendered" size="30" onfocus="value=''" style="color:black;" />
+            ex. 'Left Leg Tourniquet & IV'
+        </td>
+    </tr>
+</table>
+
+<h3><b><u>9-LINE CASEVAC</u></b></h3>
+<table>
+    <tr>
+        <td>
+            <h4><u>Line 1:</u></h4>
+        </td>
+        <td>
+            <h5>Location of Casualty Pick-up Site:</h5>
+            <input type="text" value="Enter MGRS Coordinates" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 2:</u></h4>
+        </td>
+        <td>
+            <h5>Call Sign:</h5>
+            <input type="text" value="Enter Call Sign" size="30" onfocus="value=''" style="color:black;" />
+            <br></br><h5>Radio Frequency:</h5>
+            <input type="text" value="Enter Radio Frequency" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 3:</u></h4>
+        </td>
+        <td>
+            <h5>Number of Patients by Precedence:</h5>
+            Urgent: <input type="text" value="Enter # of Urgent Patients" size="30" onfocus="value=''" style="color:black;" /> </br>
+            Priority: <input type="text" value="Enter # of Priority Patients" size="30" onfocus="value=''" style="color:black;" /> </br>
+            Routine: <input type="text" value="Enter # of Routine Patients" size="30" onfocus="value=''" style="color:black;" /> </br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 4:</u></h4>
+        </td>
+        <td>
+            <h5>Special Equipment Needed:</h5>
+            <input type="text" value="List any special equipment required" size="40" onfocus="value=''" style="color:black;" />
+            ex. Ventilator, Hoist, etc.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 5:</u></h4>
+        </td>
+        <td>
+            <h5>Number of Patients by Type:</h5>
+            Litter: <input type="text" value="Enter # of Litter Patients" size="30" onfocus="value=''" style="color:black;" /> </br>
+            Ambulatory: <input type="text" value="Enter # of Ambulatory Patients" size="30" onfocus="value=''" style="color:black;" /> </br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 6:</u></h4>
+        </td>
+        <td>
+            <h5>Security of LZ/Pick-up Site:</h5>
+            <input type="text" value="List any threats to Aircraft/Pickup vehicle at LZ" size="40" onfocus="value=''" style="color:black;" /> </br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 7:</u></h4>
+        </td>
+        <td>
+            <h5>Method of Marking of LZ/Pick-up Site:</h5>
+            <input type="text" value="Enter Method of Marking used" size="40" onfocus="value=''" style="color:black;" /> ex. Smoke, Air panel, Chem lights, etc.</br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 8:</u></h4>
+        </td>
+        <td>
+            <h5>Patient Nationality and Status:</h5>
+            <input type="text" value="Enter Patient Nationality and Status" size="40" onfocus="value=''" style="color:black;" /> ex. 1 U.S. Military and 3 Local National Civilians</br>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>Line 9:</u></h4>
+        </td>
+        <td>
+            <h5>Terrain Features near LZ/Wind Call (NBC Contaminants if applicable):</h5>
+            <input type="text" value="Enter Terrain Features and Wind Call" size="40" onfocus="value=''" style="color:black;" /> </br>
+            ex. Telephone line 1 km South, Wind 15 knots from the North
+        </td>
+    </tr>
+</table>
+
+<h3><b><u>LZ BRIEF (GMOWFER)</u></b></h3>
+<table>
+    <tr>
+        <td>
+            <h4><u>G:</u></h4>
+        </td>
+        <td>
+            <h5>Grid:</h5>
+            <input type="text" value="Enter MGRS Grid Coordinates" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>M:</u></h4>
+        </td>
+        <td>
+            <h5>Mark:</h5>
+            <input type="text" value="Enter Method of Marking" size="30" onfocus="value=''" style="color:black;" />
+            ex. Smoke, Air Panel, Chem lights, etc.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>O:</u></h4>
+        </td>
+        <td>
+            <h5>Obstacles:</h5>
+            <input type="text" value="Enter Any Obstacles Present" size="30" onfocus="value=''" style="color:black;" />
+            ex. Telephone lines, buildings, towers
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>W:</u></h4>
+        </td>
+        <td>
+            <h5>Wind:</h5>
+            <input type="text" value="Enter Wind Direction & Speed" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>F:</u></h4>
+        </td>
+        <td>
+            <h5>Friendlies:</h5>
+            <input type="text" value="Enter Nearest Friendlies Location and Orientation" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>E:</u></h4>
+        </td>
+        <td>
+            <h5>Enemy:</h5>
+            <input type="text" value="Enter Any Threats in Area" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h4><u>R:</u></h4>
+        </td>
+        <td>
+            <h5>Remarks:</h5>
+            <input type="text" value="Enter Any Additional Info" size="30" onfocus="value=''" style="color:black;" />
+        </td>
+    </tr>
+</table>
