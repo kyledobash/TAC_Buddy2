@@ -3,14 +3,22 @@
 }
 
 <style>
-    img {
-        width: 250px;
-        height: auto;
+    p {
+        padding-left: 225px;
+        padding-right: 225px;
     }
 </style>
 
 <div class="text-center">
-    <img src="TAC_Buddy_Logo.png" alt="alt text here"/>
-    <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Click Here to Register</a>
-    <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Click Here to Login</a>
+    <img id="logo" src="TAC_Buddy_Logo.png" alt="alt text here" width="300"/>
+    <h4><b>Welcome to TAC Buddy!</b></h4>
+    <p>
+        Tac Buddy is a Multi-purpose toolkit designed for common needs ammongst Military small-unit leaders. Tac Buddy provides tools for
+        personnel and gear accountability/management, commonly used conversion calculators along with radio comms templates, and even a
+        Map with all necessary targeting data for tactical applications.
+    </p>
+    <h5>
+        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Click Here to Login</a>
+        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Click Here to Register</a>
+    </h5>
 </div>
