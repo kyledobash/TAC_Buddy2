@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using TAC_Buddy2_Proj.Data;
 using TAC_Buddy2_Proj.Models;
+using TAC_Buddy2_Proj.Views.TAC_TeamLeader;
 
 namespace TAC_Buddy2_Proj.Controllers
 {
@@ -368,6 +369,13 @@ namespace TAC_Buddy2_Proj.Controllers
 
         public IActionResult CommTemplates()
         {
+            return View();
+        }
+        
+        public IActionResult TAC_Map()
+        {
+            APIKey aPIKey = new APIKey();
+            ViewBag.key = aPIKey.googleKey;
             return View();
         }
 
