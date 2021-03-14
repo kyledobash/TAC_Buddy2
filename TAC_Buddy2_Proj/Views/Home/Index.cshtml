@@ -3,22 +3,44 @@
 }
 
 <style>
-    p {
-        padding-left: 225px;
-        padding-right: 225px;
+    .jumbotron {
+        text-align: center;
+        background: rgba(0,0,0,.4);
+        width: 100%;
+        text-shadow: 0px 1px black;
     }
+
+    .jumbotron a {
+        background-color: gray;
+        border-color: gray;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .jumbotron a:hover {
+        background-color: dimgray;
+        border-color: dimgray;        
+    }
+
+    body {
+        background-image: url(/marines.jpg);
+        background-size: 100%;
+        background-position: 10% 0;
+        background-repeat: no-repeat;
+    } 
 </style>
 
-<div class="text-center">
-    <img id="logo" src="TAC_Buddy_Logo.png" alt="alt text here" width="300"/>
-    <h4><b>Welcome to TAC Buddy!</b></h4>
-    <p>
+<div class="jumbotron">
+    <img id="logo" src="TAC_Buddy_Logo.png" alt="alt text here" width="300" /><h1>Welcome to TAC Buddy!</h1>
+    <p><b>
         Tac Buddy is a multi-purpose toolkit designed for common needs amongst military small-unit leaders. Tac Buddy provides tools for
         personnel and gear accountability/management, commonly used unit conversion calculators along with radio comms templates, and even a
         Map with all necessary targeting data for tactical applications.
+        </b>
     </p>
-    <h5>
-        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Login">Login</a>
-        <a class="nav-link text-light" asp-area="Identity" asp-page="/Account/Register">Register</a>
-    </h5>
+    <p>
+        <a class="btn btn-primary btn-lg" role="button" asp-area="Identity" asp-page="/Account/Login"><b>Login</b></a>
+        <a class="btn btn-primary btn-lg" role="button" asp-area="Identity" asp-page="/Account/Register"><b>Register</b></a>
+    </p>
 </div>
+

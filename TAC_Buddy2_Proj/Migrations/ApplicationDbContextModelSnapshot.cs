@@ -48,8 +48,8 @@ namespace TAC_Buddy2_Proj.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9c63ab65-1a8a-4df3-bf17-1cb7e4190e71",
-                            ConcurrencyStamp = "ea2318d7-b3f9-4b80-97b9-45b38d373342",
+                            Id = "dd0ba084-28a8-4cf8-9c2e-1526d55a71eb",
+                            ConcurrencyStamp = "36d84b38-e15e-4825-98b4-120d52067ec5",
                             Name = "TAC_TeamLeader",
                             NormalizedName = "TAC_TeamLeader"
                         });
@@ -251,7 +251,7 @@ namespace TAC_Buddy2_Proj.Migrations
                         new
                         {
                             EDL_ID = 1,
-                            EDL_Item_Name = "M4A1",
+                            EDL_Item_Name = "M38",
                             EDL_Serial = "189GH200",
                             TAC_TeamLeader_ID = 1
                         },
@@ -265,30 +265,156 @@ namespace TAC_Buddy2_Proj.Migrations
                         new
                         {
                             EDL_ID = 3,
-                            EDL_Item_Name = "M27 IAR",
+                            EDL_Item_Name = "M203",
+                            EDL_Serial = "98HJU7",
+                            TAC_TeamLeader_ID = 1
+                        },
+                        new
+                        {
+                            EDL_ID = 4,
+                            EDL_Item_Name = "PRC-152",
+                            EDL_Serial = "008POZ91",
+                            TAC_TeamLeader_ID = 1
+                        },
+                        new
+                        {
+                            EDL_ID = 5,
+                            EDL_Item_Name = "GLOCK 17",
+                            EDL_Serial = "TT5R91",
+                            TAC_TeamLeader_ID = 1
+                        },
+                        new
+                        {
+                            EDL_ID = 6,
+                            EDL_Item_Name = "M110 SASS",
                             EDL_Serial = "8679YU123",
                             TAC_TeamMate_ID = 1
                         },
                         new
                         {
-                            EDL_ID = 4,
-                            EDL_Item_Name = "PVS-14",
+                            EDL_ID = 7,
+                            EDL_Item_Name = "PVS-31",
                             EDL_Serial = "45578982",
                             TAC_TeamMate_ID = 1
                         },
                         new
                         {
-                            EDL_ID = 5,
-                            EDL_Item_Name = "M38 IAR",
+                            EDL_ID = 8,
+                            EDL_Item_Name = "GLOCK 17",
                             EDL_Serial = "1979TG143",
+                            TAC_TeamMate_ID = 1
+                        },
+                        new
+                        {
+                            EDL_ID = 9,
+                            EDL_Item_Name = "PRC-152",
+                            EDL_Serial = "94858937",
+                            TAC_TeamMate_ID = 1
+                        },
+                        new
+                        {
+                            EDL_ID = 10,
+                            EDL_Item_Name = "M4A1",
+                            EDL_Serial = "993JF9I807",
                             TAC_TeamMate_ID = 2
                         },
                         new
                         {
-                            EDL_ID = 6,
-                            EDL_Item_Name = "PVS-14",
-                            EDL_Serial = "94858937",
+                            EDL_ID = 11,
+                            EDL_Item_Name = "PVS-31",
+                            EDL_Serial = "HJ33HU23T",
                             TAC_TeamMate_ID = 2
+                        },
+                        new
+                        {
+                            EDL_ID = 12,
+                            EDL_Item_Name = "GLOCK 17",
+                            EDL_Serial = "JT9012CV",
+                            TAC_TeamMate_ID = 2
+                        },
+                        new
+                        {
+                            EDL_ID = 13,
+                            EDL_Item_Name = "PRC-117",
+                            EDL_Serial = "99JKI54",
+                            TAC_TeamMate_ID = 2
+                        },
+                        new
+                        {
+                            EDL_ID = 14,
+                            EDL_Item_Name = "PRC-152",
+                            EDL_Serial = "102QE32",
+                            TAC_TeamMate_ID = 2
+                        },
+                        new
+                        {
+                            EDL_ID = 15,
+                            EDL_Item_Name = "M240B",
+                            EDL_Serial = "1178DI99B",
+                            TAC_TeamMate_ID = 3
+                        },
+                        new
+                        {
+                            EDL_ID = 16,
+                            EDL_Item_Name = "GLOCK 17",
+                            EDL_Serial = "IDS9345",
+                            TAC_TeamMate_ID = 3
+                        },
+                        new
+                        {
+                            EDL_ID = 17,
+                            EDL_Item_Name = "240B SPARE BARREL",
+                            EDL_Serial = "IDS9345",
+                            TAC_TeamMate_ID = 3
+                        },
+                        new
+                        {
+                            EDL_ID = 18,
+                            EDL_Item_Name = "PRC-152",
+                            EDL_Serial = "JDI8394",
+                            TAC_TeamMate_ID = 3
+                        },
+                        new
+                        {
+                            EDL_ID = 19,
+                            EDL_Item_Name = "PVS-31",
+                            EDL_Serial = "JWWU9374",
+                            TAC_TeamMate_ID = 3
+                        },
+                        new
+                        {
+                            EDL_ID = 20,
+                            EDL_Item_Name = "M4A1",
+                            EDL_Serial = "93KIRT373",
+                            TAC_TeamMate_ID = 4
+                        },
+                        new
+                        {
+                            EDL_ID = 21,
+                            EDL_Item_Name = "GLOCK 17",
+                            EDL_Serial = "48957390",
+                            TAC_TeamMate_ID = 4
+                        },
+                        new
+                        {
+                            EDL_ID = 22,
+                            EDL_Item_Name = "PVS-31",
+                            EDL_Serial = "5893743905",
+                            TAC_TeamMate_ID = 4
+                        },
+                        new
+                        {
+                            EDL_ID = 23,
+                            EDL_Item_Name = "CMD",
+                            EDL_Serial = "GITJ8498",
+                            TAC_TeamMate_ID = 4
+                        },
+                        new
+                        {
+                            EDL_ID = 24,
+                            EDL_Item_Name = "PRC-152",
+                            EDL_Serial = "G49YT328",
+                            TAC_TeamMate_ID = 4
                         });
                 });
 
@@ -375,28 +501,54 @@ namespace TAC_Buddy2_Proj.Migrations
                         new
                         {
                             TAC_TeamMate_ID = 1,
-                            Billet = "Assistant Team Leader",
+                            Billet = "Sniper",
                             EDIPI_DoD_ID = 1672285964.0,
                             EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Jake",
-                            LastName = "Hinton",
-                            MOS_designator = "0341",
+                            FirstName = "Jared",
+                            LastName = "Firebaugh",
+                            MOS_designator = "0317",
                             Rank = "CPL",
                             TAC_TeamLeader_ID = 1,
-                            ZAP_Number = "JH85964"
+                            ZAP_Number = "JF85964"
                         },
                         new
                         {
                             TAC_TeamMate_ID = 2,
-                            Billet = "Designated Marksman",
+                            Billet = "JTAC",
                             EDIPI_DoD_ID = 1683040678.0,
                             EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Jack",
-                            LastName = "Ingles",
-                            MOS_designator = "0311",
-                            Rank = "LCPL",
+                            FirstName = "Dan",
+                            LastName = "Wargo",
+                            MOS_designator = "8002",
+                            Rank = "SGT",
                             TAC_TeamLeader_ID = 1,
-                            ZAP_Number = "JI40678"
+                            ZAP_Number = "DW40678"
+                        },
+                        new
+                        {
+                            TAC_TeamMate_ID = 3,
+                            Billet = "Machine Gunner",
+                            EDIPI_DoD_ID = 1424993820.0,
+                            EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Dylan",
+                            LastName = "Snyder",
+                            MOS_designator = "0331",
+                            Rank = "CPL",
+                            TAC_TeamLeader_ID = 1,
+                            ZAP_Number = "DS93820"
+                        },
+                        new
+                        {
+                            TAC_TeamMate_ID = 4,
+                            Billet = "EOD",
+                            EDIPI_DoD_ID = 1839477601.0,
+                            EDL_Last_Verified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FirstName = "Jeffery",
+                            LastName = "Allen",
+                            MOS_designator = "2336",
+                            Rank = "CPL",
+                            TAC_TeamLeader_ID = 1,
+                            ZAP_Number = "JA77601"
                         });
                 });
 

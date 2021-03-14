@@ -219,19 +219,37 @@ namespace TAC_Buddy2_Proj.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "9c63ab65-1a8a-4df3-bf17-1cb7e4190e71", "ea2318d7-b3f9-4b80-97b9-45b38d373342", "TAC_TeamLeader", "TAC_TeamLeader" });
+                values: new object[] { "dd0ba084-28a8-4cf8-9c2e-1526d55a71eb", "36d84b38-e15e-4825-98b4-120d52067ec5", "TAC_TeamLeader", "TAC_TeamLeader" });
 
             migrationBuilder.InsertData(
                 table: "EDL_Items",
                 columns: new[] { "EDL_ID", "EDL_Item_Name", "EDL_Serial", "TAC_TeamLeader_ID", "TAC_TeamMate_ID" },
                 values: new object[,]
                 {
-                    { 1, "M4A1", "189GH200", 1, null },
+                    { 24, "PRC-152", "G49YT328", null, 4 },
+                    { 23, "CMD", "GITJ8498", null, 4 },
+                    { 22, "PVS-31", "5893743905", null, 4 },
+                    { 21, "GLOCK 17", "48957390", null, 4 },
+                    { 20, "M4A1", "93KIRT373", null, 4 },
+                    { 19, "PVS-31", "JWWU9374", null, 3 },
+                    { 18, "PRC-152", "JDI8394", null, 3 },
+                    { 17, "240B SPARE BARREL", "IDS9345", null, 3 },
+                    { 16, "GLOCK 17", "IDS9345", null, 3 },
+                    { 15, "M240B", "1178DI99B", null, 3 },
+                    { 13, "PRC-117", "99JKI54", null, 2 },
+                    { 14, "PRC-152", "102QE32", null, 2 },
+                    { 11, "PVS-31", "HJ33HU23T", null, 2 },
+                    { 10, "M4A1", "993JF9I807", null, 2 },
+                    { 9, "PRC-152", "94858937", null, 1 },
+                    { 8, "GLOCK 17", "1979TG143", null, 1 },
+                    { 7, "PVS-31", "45578982", null, 1 },
+                    { 6, "M110 SASS", "8679YU123", null, 1 },
+                    { 5, "GLOCK 17", "TT5R91", 1, null },
+                    { 4, "PRC-152", "008POZ91", 1, null },
+                    { 3, "M203", "98HJU7", 1, null },
                     { 2, "PVS-14", "4552983", 1, null },
-                    { 3, "M27 IAR", "8679YU123", null, 1 },
-                    { 4, "PVS-14", "45578982", null, 1 },
-                    { 5, "M38 IAR", "1979TG143", null, 2 },
-                    { 6, "PVS-14", "94858937", null, 2 }
+                    { 1, "M38", "189GH200", 1, null },
+                    { 12, "GLOCK 17", "JT9012CV", null, 2 }
                 });
 
             migrationBuilder.InsertData(
@@ -239,8 +257,10 @@ namespace TAC_Buddy2_Proj.Migrations
                 columns: new[] { "TAC_TeamMate_ID", "Billet", "EDIPI_DoD_ID", "EDL_Last_Verified", "FirstName", "LastName", "MOS_designator", "Rank", "TAC_TeamLeader_ID", "ZAP_Number" },
                 values: new object[,]
                 {
-                    { 1, "Assistant Team Leader", 1672285964.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jake", "Hinton", "0341", "CPL", 1, "JH85964" },
-                    { 2, "Designated Marksman", 1683040678.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jack", "Ingles", "0311", "LCPL", 1, "JI40678" }
+                    { 3, "Machine Gunner", 1424993820.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Dylan", "Snyder", "0331", "CPL", 1, "DS93820" },
+                    { 1, "Sniper", 1672285964.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jared", "Firebaugh", "0317", "CPL", 1, "JF85964" },
+                    { 2, "JTAC", 1683040678.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Dan", "Wargo", "8002", "SGT", 1, "DW40678" },
+                    { 4, "EOD", 1839477601.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Jeffery", "Allen", "2336", "CPL", 1, "JA77601" }
                 });
 
             migrationBuilder.CreateIndex(
