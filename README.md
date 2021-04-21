@@ -12,3 +12,5 @@ designed to make the average warfighter's life a little bit more automated and e
 
 [View the video demo here!](https://vimeo.com/527378278)
 
+![alt text](https://github.com/kyledobash/TAC_Buddy2/blob/main/TAC_Buddy2_Proj/wwwroot/SampleScreenshot.jpg?raw=true)
+
