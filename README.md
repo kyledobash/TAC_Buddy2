@@ -1,5 +1,5 @@
 # TAC Buddy
-Multi-Purpose Tactical Toolkit
+### Multi-Purpose Tactical Toolkit
 
 TACBuddy is a multi-purpose toolkit designed specifically for military small-unit
 leaders everyday needs. Solo project built during a 10-day sprint. TACBuddy is
